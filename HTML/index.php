@@ -1,6 +1,6 @@
 <?php
 	
-	include $_SERVER['DOCUMENT_ROOT'] . '/configs.php';
+	include $_SERVER['DOCUMENT_ROOT'] . '/HTML/configs/db.php';
 
 ?>
 <!DOCTYPE html>
