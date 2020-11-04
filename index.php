@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Cinagro</title>
+	<title>SpecialSpicy</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5">
+	<!-- Подключение шрифтов Lobster -->
+	<link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@1,700&display=swap" rel="stylesheet">
 	<!-- Framework Css -->
 	<link rel="stylesheet" type="text/css" href="assets/css/lib/bootstrap.min.css">
 	<!-- Font Awesome / Icon Fonts -->
@@ -28,20 +30,14 @@
 				<div class="row">
 					<div class="col-md-6 col-sm-6 col-xs-12 text-left">
 						<ul>
-							<li><a href="contact.html">Contact Us</a></li>
-							<li><a href="contact.html">Support</a></li>
+							<li><a class="cursive-philosopher con-us-header" href="contact.html">Написать нам</a></li>
+							<li><a class="cursive-philosopher" href="contact.html">Поддержка</a></li>
 						</ul><!--right-top-bar-->
 					</div>
 					<div class="col-md-6 col-sm-6 col-xs-12 text-right">
 						<ul>
-							<li><a href="#">Login</a></li>
-							<li>
-								<select class="custom-select">
-									<option value="dollar">us dollar</option>
-									<option value="Eur">Eur</option>
-									<option value="Eur2">This is just for demo</option>
-								</select>
-							</li>
+							<li><a class="cursive-philosopher reg-header" href="#">Регистрация</a></li>
+							<li><a class="cursive-philosopher" href="#">Авторизация</a></li>
 						</ul><!--right-top-bar-->
 					</div>
 				</div>
@@ -51,10 +47,10 @@
 			<div class="row">
 				<div class="col-md-5 col-sm-4 col-xs-4">
 					<ul class="menu">
-						<li><a href="index.html">Главная</a></li>
+						<li><a class="cursive-philosopher" href="/">Главная</a></li>
 						<li class="mega-menu-top">
-							<a href="#">Features</a>
-							<div class="mega-menu columns-4">
+							<a href="#" class="cursive-philosopher">Товары</a>
+							<div class="menu-w-stuff mega-menu columns-4">
 								<ul>
 									<li class="first">Fruit &amp; Veg</li>
 									<li><a href="#">Set Boxes</a></li>
@@ -101,19 +97,19 @@
 							</div><!--mega-menu-->
 						</li><!--children-->
 						<li class="children">
-							<a href="about.html">About</a>
+							<a class="cursive-philosopher" href="about.html">О нас</a>
 							<ul class="sub-menu">
-								<li><a href="#">Why Choose Cinagro?</a></li>
+								<li><a href="#">Почему именно SpecialSpicy?</a></li>
 								<li><a href="#">Organic Leadership Awards</a></li>
 								<li><a href="#">Verification &amp; Certification</a></li>
 								<li><a href="#">Organic Standards</a></li>
 							</ul><!--sub-menu-->
 						</li>
-						<li><a href="blog.html">Recipes</a></li>
-						<li><a href="journal-blog.html">Journal</a></li>
+						<li><a class="cursive-philosopher" href="blog.html">Рецепты</a></li>
+						<li><a class="cursive-philosopher" href="journal-blog.html">Новости</a></li>
 						<li class="mega-menu-top">
-							<a href="#">Store</a>
-							<div class="mega-menu columns-3">
+							<a class="cursive-philosopher" href="#">Партнеры</a>
+							<div class="menu-w-stuff mega-menu columns-3">
 								<ul>
 									<li class="first">Shop Page</li>
 									<li><a href="shop.html">Shop</a></li>
@@ -145,15 +141,19 @@
 						<span></span>
 					</button>
 				</div>
-				<div class="col-md-2 col-sm-3 col-xs-3 text-center">
-					<div class="logo"><a href="index.html"><img src="assets/images/logo.png" alt="logo"></a></div>
+				<div class="logotype col-md-2 col-sm-3 col-xs-3 text-center">
+					<div class="logo">
+						<a href="/">
+							<img src="assets/images/logo1.png" alt="logo">
+						</a>
+					</div>
 				</div>
 				<div class="col-md-5 col-sm-5 col-xs-5 text-right">
 					<ul class="info-header">
-						<li><a href="#"><i class="fa fa-volume-control-phone"></i>+91-141-4007601</a></li>
-						<li class="search-icon"><a href="#"><i class="fa fa-search"></i>search</a></li>
+						<li><a href="#"><i class="fa fa-volume-control-phone"></i>+38(068)-123-45-67</a></li>
+						<li class="cursive-philosopher" class="search-icon"><a href="#"><i class="fa fa-search"></i>Искать</a></li>
 						<li class="cart">
-							<a href="cart.html"><i class="fa fa-shopping-bag"></i>Bag (0)</a>
+							<a class="cursive-philosopher" href="cart.html"><i class="fa fa-shopping-bag"></i>Корзина (0)</a>
 							<div class="cart-modal">
 								<ul>
 									<li>
@@ -190,16 +190,16 @@
 	</header>
 	<!--============== End of Header ========================-->
 	<!--===================== Base-Slider ========================-->
-	<div class="base-slider owl-carousel owl-theme">
+	<div class="position-slider base-slider owl-carousel owl-theme">
 		<div class="item">
-			<img src="https://cinagro-html.fruitfulcode.com/wp-content/themes/cinagro-html/assets/images/slider.jpg" alt="slider">
+			<img src="assets/images/spice.png" alt="slider">
 			<div class="text-slider">
 				<h2>Nature has always<br>cared for us!</h2>
 				<a href="#" class="custom-btn text-center yellow">top tips</a>
 			</div><!--text-slider-->
 		</div><!--item-->
 		<div class="item slide-two">
-			<img src="http://via.placeholder.com/1920x760" alt="slider">
+			<img src="assets/images/spice2.png" alt="slider">
 			<div class="text-slider">
 				<h2>Organic pancakes<br>homestyle</h2>
 				<span class="price">12.99$</span>
@@ -207,14 +207,9 @@
 			</div><!--text-slider-->
 		</div><!--item-->
 		<div class="item slide-three">
-			<img src="Documentation/assets/images/product-carousel.jpg" alt="slider">
+			<img src="assets/images/spice3.png" alt="slider">
 			<div class="text-slider last">
 				<h2>One day sale!<br>large avocados<span class="text-pink">for $5</span></h2>
-				<div id="countdown">
-					<div><span class="hours">00</span><span class="text">hrs</span></div>
-					<div><span class="minutes">00</span><span class="text">min</span></div>
-					<div><span class="seconds">00</span><span class="text">sec</span></div>
-				</div>
 				<a href="#" class="custom-btn green text-center">top tips</a>
 			</div><!--text-slider-->
 		</div><!--item-->
@@ -227,20 +222,20 @@
 			<ul>
 				<li>
 					<a href="shop.html">
-						<img src="https://cinagro-html.fruitfulcode.com/wp-content/themes/cinagro-html/assets/images/groceries.png" alt="groceries">
-						<span>Natural</span>
+						<img src="assets/images/spice-for-coffee.png" alt="groceries">
+						<span>Специи для кофеен</span>
 					</a>
 				</li>
 				<li class="center">
 					<a href="shop.html">
-						<img src="https://cinagro-html.fruitfulcode.com/wp-content/themes/cinagro-html/assets/images/pineapple.png" alt="pineapple">
-						<span>organic</span>
+						<img src="assets/images/spice-for-cafe.png" alt="pineapple">
+						<span>Специи для ресторанов</span>
 					</a>
 				</li>
 				<li>
 					<a href="shop.html">
-						<img src="https://cinagro-html.fruitfulcode.com/wp-content/themes/cinagro-html/assets/images/corn.png" alt="corn">
-						<span>health</span>
+						<img src="assets/images/spice-for-home.png" alt="corn">
+						<span>Специи для дома</span>
 					</a>
 				</li>
 			</ul>
@@ -284,7 +279,7 @@
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<div class="widget-contact">
 						<h4 class="widget-title">Найдите нас</h4>
-						<address>Улица Хрещатик 1<br>Phone: +38067-123-45-67<br>Email: spice@gmail.com</address>
+						<address>Улица Хрещатик 1<br>Phone: +38(068)-123-45-67<br>Email: spice@gmail.com</address>
 					</div><!--widget-contact-->
 				</div>
 			</div>
