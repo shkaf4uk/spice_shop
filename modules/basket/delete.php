@@ -21,7 +21,7 @@ if (isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
 	$jsonProduct = json_encode($basket_massiv);
 
 	//Добавляем куки
-	setcookie("basket", $jsonProduct, time() + 60*60, "/");
+	setcookie("basket", $jsonProduct, time() + 60*360, "/");
 
 	//вывод количества товаров в корзине
 	echo $jsonProduct;

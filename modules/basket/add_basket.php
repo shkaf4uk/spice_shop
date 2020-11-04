@@ -1,12 +1,6 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] .'/configs/db.php';
 
-
-// 1. Получить товар по которому кликнул пользователь
-// 2. Добавить массив товаров
-// 3. Добавить массив в куки
-
-// Если есть пост запрос, то
 if (isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
 
 	// sql запрос 
@@ -24,11 +18,6 @@ if (isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
 		// Принимает закодированную в JSON строку и преобразует ее в переменную (массив)
 		$basket_massiv = json_decode($_COOKIE['basket'], true);
 
-		/* 
-			1. Пройтись по всему масиву корзины
-			2. Проверить есть ли совпадение
-			3. Если совпадения есть, увеличить количество товаров
-		*/
 			$issetProduct = 0;
 			for ($i=0; $i < count($basket_massiv['basket']); $i++){
 				if( $basket_massiv['basket'][$i]["product_id"] == $product["id"] ){
@@ -50,17 +39,16 @@ if (isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
 		$basket_massiv = ["basket" => [ 
 			["product_id" => $product['id'],
 			"count" => 1]  
-	] ];
+		] ];
 	}
 
 	setcookie("basket", "" , 0, "/");
-	
 	
 	// Преобразование массива в JSON формат
 	$jsonProduct = json_encode($basket_massiv);
 
 	//Добавляем куки
-	setcookie("basket", $jsonProduct, time() + 60*60, "/");
+	setcookie("basket", $jsonProduct, time() + 60*360, "/");
 
 	//вывод количества товаров в корзине
 	echo $jsonProduct;

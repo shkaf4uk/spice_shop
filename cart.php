@@ -48,9 +48,9 @@
 						<td class="product-price text-center" data-title="Price"><span class="price"><?php echo $product["costs"] ?>грн</span></td>
 						<td class="product-quantity text-center" data-title="Quantity">
 							<div class="quantity">
-								<span class="minus"><img src="assets/images/minus.png" alt="minus"></span>
-								<input value="<?php echo $basket_massiv['basket'][$i]['count'] ?>" size="5">
-								<span class="plus"><img src="assets/images/plus.png" alt="plus"></span>
+								<span class="minus" data-id="<?php echo $product['id'] ?>"><img src="assets/images/minus.png" alt="minus"></span>
+								<input class="input_basket" value="<?php echo $basket_massiv['basket'][$i]['count'] ?>" size="5">
+								<span class="plus" data-id="<?php echo $product['id'] ?>"><img src="assets/images/plus.png" alt="plus"></span>
 							</div><!--quantity-->
 						</td>
 						<td class="product-price text-center" data-title="Total"><span class="price"><?php echo $product["costs"]*$basket_massiv['basket'][$i]['count'] ?>грн</span></td>
@@ -65,7 +65,7 @@
 			</table>
 			<div class="bottom-table">
 				<a href="shop.php" class="custom-btn">Обратно в магазин</a>
-				<span><a href="#"><img src="assets/images/refresh.png" alt="refresh">update cart</a></span>
+				<span class="total_price_basket">Отого: 0грн</span>
 			</div><!--bottom-table-->
 		</div>
 		<!--================= End of Cart Inside ====================-->

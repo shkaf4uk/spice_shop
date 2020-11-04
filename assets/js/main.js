@@ -262,23 +262,49 @@ $( document ).on('ready', function(){
 	});
 
 
-	// **********************************************************************//
+	// ******************************************************************************************************************************************//
 	// ! 10. Quantity product
-	// **********************************************************************//
+	// *******************************************************************************************************************************************//
+
 	var quantity = '.quantity';
 
-	$(quantity).on('click', '.minus', function(){
+	$(quantity).on('click', '.minus', function (){
 		var $input = $(this).parent().find('input');
+		let price = parseInt($input[0].offsetParent.previousElementSibling.innerText);
+		let id = $input.context.attributes[1].nodeValue;
 		var count = parseInt($input.val(),10) - 1;
+
 		count = count < 1 ? 1 : count;
-		$input.val(count);
+
+		$input.val(count)[0].defaultValue = count ;
+		let value = $input.val(count)[0].defaultValue;
 		$input.change();
+
+		$input[0].offsetParent.nextElementSibling.innerText = price*value + "грн";
+
+		var ajax = new XMLHttpRequest();
+			ajax.open("POST", siteURL + "/modules/basket/change_count.php", false );
+			ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			ajax.send("value=" + value + "&id=" + id);
 		return false;
 	});
+
 	$(quantity).on('click', '.plus', function(){
 		var $input = $(this).parent().find('input');
+		let price = parseInt($input[0].offsetParent.previousElementSibling.innerText);
+		let id = $input.context.dataset.id;
+
 		$input.val(parseInt($input.val(),10) + 1);
+		$input[0].defaultValue = parseInt($input.val(),10);
 		$input.change();
+
+		let value = $input[0].defaultValue;
+		$input[0].offsetParent.nextElementSibling.innerText = price*value + "грн";;
+
+		var ajax = new XMLHttpRequest();
+			ajax.open("POST", siteURL + "/modules/basket/change_count.php", false );
+			ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			ajax.send("value=" + value + "&id=" + id);
 		return false;
 	});
 
@@ -553,65 +579,65 @@ initPlayers(jQuery('#player-container').length);
 * Basic Count Down to Date and Time
 * Author: @mrwigster / trulycode.com
 */
-(function (e) {
-	e.fn.countdown = function (t, n) {
-	function i() {
-		eventDate = Date.parse(r.date) / 1e3;
-		currentDate = Math.floor(e.now() / 1e3);
-		if (eventDate <= currentDate) {
-			n.call(this);
-			clearInterval(interval)
-		}
-		seconds = eventDate - currentDate;
-		days = Math.floor(seconds / 86400);
-		seconds -= days * 60 * 60 * 24;
-		hours = Math.floor(seconds / 3600);
-		seconds -= hours * 60 * 60;
-		minutes = Math.floor(seconds / 60);
-		seconds -= minutes * 60;
-		days == 1 ? thisEl.find(".timeRefDays").text("day") : thisEl.find(".timeRefDays").text("days");
-		hours == 1 ? thisEl.find(".timeRefHours").text("hour") : thisEl.find(".timeRefHours").text("hours");
-		minutes == 1 ? thisEl.find(".timeRefMinutes").text("minute") : thisEl.find(".timeRefMinutes").text("minutes");
-		seconds == 1 ? thisEl.find(".timeRefSeconds").text("second") : thisEl.find(".timeRefSeconds").text("seconds");
-		if (r["format"] == "on") {
-			days = String(days).length >= 2 ? days : "0" + days;
-			hours = String(hours).length >= 2 ? hours : "0" + hours;
-			minutes = String(minutes).length >= 2 ? minutes : "0" + minutes;
-			seconds = String(seconds).length >= 2 ? seconds : "0" + seconds
-		}
-		if (!isNaN(eventDate)) {
-			thisEl.find(".days").text(days);
-			thisEl.find(".hours").text(hours);
-			thisEl.find(".minutes").text(minutes);
-			thisEl.find(".seconds").text(seconds)
-		} else {
-			alert("Invalid date. Example: 30 Tuesday 2013 15:50:00");
-			clearInterval(interval)
-		}
-	}
-	var thisEl = e(this);
-	var r = {
-		date: null,
-		format: null
-	};
-	t && e.extend(r, t);
-	i();
-	interval = setInterval(i, 1e3)
-	}
-})(jQuery);
-function e() {
-	var e = new Date;
-	e.setDate(e.getDate() + 60);
-	dd = e.getDate();
-	mm = e.getMonth() + 1;
-	y = e.getFullYear();
-	futureFormattedDate = mm + "/" + dd + "/" + y;
-	return futureFormattedDate
-}
-$("#countdown").countdown({
-	date: "30 May 2019 09:00:00", // Change this to your desired date to countdown to
-	format: "on"
-});
+// (function (e) {
+// 	e.fn.countdown = function (t, n) {
+// 	function i() {
+// 		eventDate = Date.parse(r.date) / 1e3;
+// 		currentDate = Math.floor(e.now() / 1e3);
+// 		if (eventDate <= currentDate) {
+// 			n.call(this);
+// 			clearInterval(interval)
+// 		}
+// 		seconds = eventDate - currentDate;
+// 		days = Math.floor(seconds / 86400);
+// 		seconds -= days * 60 * 60 * 24;
+// 		hours = Math.floor(seconds / 3600);
+// 		seconds -= hours * 60 * 60;
+// 		minutes = Math.floor(seconds / 60);
+// 		seconds -= minutes * 60;
+// 		days == 1 ? thisEl.find(".timeRefDays").text("day") : thisEl.find(".timeRefDays").text("days");
+// 		hours == 1 ? thisEl.find(".timeRefHours").text("hour") : thisEl.find(".timeRefHours").text("hours");
+// 		minutes == 1 ? thisEl.find(".timeRefMinutes").text("minute") : thisEl.find(".timeRefMinutes").text("minutes");
+// 		seconds == 1 ? thisEl.find(".timeRefSeconds").text("second") : thisEl.find(".timeRefSeconds").text("seconds");
+// 		if (r["format"] == "on") {
+// 			days = String(days).length >= 2 ? days : "0" + days;
+// 			hours = String(hours).length >= 2 ? hours : "0" + hours;
+// 			minutes = String(minutes).length >= 2 ? minutes : "0" + minutes;
+// 			seconds = String(seconds).length >= 2 ? seconds : "0" + seconds
+// 		}
+// 		if (!isNaN(eventDate)) {
+// 			thisEl.find(".days").text(days);
+// 			thisEl.find(".hours").text(hours);
+// 			thisEl.find(".minutes").text(minutes);
+// 			thisEl.find(".seconds").text(seconds)
+// 		} else {
+// 			alert("Invalid date. Example: 30 Tuesday 2013 15:50:00");
+// 			clearInterval(interval)
+// 		}
+// 	}
+// 	var thisEl = e(this);
+// 	var r = {
+// 		date: null,
+// 		format: null
+// 	};
+// 	t && e.extend(r, t);
+// 	i();
+// 	interval = setInterval(i, 1e3)
+// 	}
+// })(jQuery);
+// function e() {
+// 	var e = new Date;
+// 	e.setDate(e.getDate() + 60);
+// 	dd = e.getDate();
+// 	mm = e.getMonth() + 1;
+// 	y = e.getFullYear();
+// 	futureFormattedDate = mm + "/" + dd + "/" + y;
+// 	return futureFormattedDate
+// }
+// $("#countdown").countdown({
+// 	date: "30 May 2019 09:00:00", // Change this to your desired date to countdown to
+// 	format: "on"
+// });
 // **********************************************************************//
 // ! 20. Google map
 // **********************************************************************//
