@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "spice_shop";
+$dbname = "tw";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
