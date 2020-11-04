@@ -1,0 +1,12 @@
+/*Модальное окно при наведении на картинку*/
+body .cart-modal li img {
+    float: left;
+    margin-right: 9px;
+    width: 100px;
+}
+
+/*кнопка удаления продукта из корзины*/
+.btn_delete_product {
+	background: none;
+	border: none;
+}

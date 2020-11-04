@@ -1,7 +1,19 @@
+<?php
+
+	include $_SERVER['DOCUMENT_ROOT'] .'/HTML/configs/db.php';
+
+	// $sql = "SELECT * FROM products WHERE id=25";
+	// $result = $conn -> query($sql);
+	// $product = mysqli_fetch_assoc($result);
+	// var_dump($product);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Cinagro</title>
+	<title>Spice shop</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5">
 	<!-- Framework Css -->
@@ -18,6 +30,8 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<!-- Responsive Theme -->
 	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 </head>
 <body>
 <div class="wrapper">
@@ -192,231 +206,140 @@
 	<!--================= Breadcrumb ====================-->
 	<div class="breadcrumb-top bg-yellow">
 		<div class="container">
-			<h2>Our Store</h2>
+			<h2>Корзина</h2>
 			<ol class="breadcrumb">
-				<li><a href="#">Home</a></li>
-				<li class="active">Store</li>
+				<li><a href="/">Главная</a></li>
+				<li class="active">Корзина</li>
 			</ol><!--breadcrumb-->
 		</div>
-	</div><!--breadcrumb-top-->
+	</div>
 	<!--================= End of Breadcrumb ====================-->
-	<!--================= Content Shop ====================-->
-	<div class="content-shop">
+	<div class="container">
+		<!--================= Cart Inside ====================-->
+		<div class="cart-inside">
+			<h3>Товары в вашей корзине</h3>
+			<table>
+				<thead>
+					<tr>
+						<td class="table-product">Продукт</td>
+						<td>&nbsp;</td>
+						<td class="text-center">Цена</td>
+						<td class="text-center">Количество</td>
+						<td class="text-center">Сумма</td>
+						<td>&nbsp;</td>
+					</tr>
+				</thead>
+				<tbody>
+
+
+<?php
+			//Вывод товаров в корзине
+		  		if (isset($_COOKIE['basket'])){
+		  			$basket_massiv = json_decode($_COOKIE['basket'], true);
+
+		  			for ($i=0; $i< count($basket_massiv['basket']); $i++){
+		  				$sql = "SELECT * FROM products WHERE id=". $basket_massiv['basket'][$i]['product_id'];
+		  				$result = $conn -> query($sql);
+		  				$product = mysqli_fetch_assoc($result);
+?>
+					<tr>
+						<td class="product-thumbnail"><a href="single-product.html"><img src="<?php echo $product["image"] ?>" alt="cart-product"></a></td>
+						<td class="product-name" data-title="Product"><?php echo $product["title"] . " " .  $product["description"] ?></td>
+						<td class="product-price text-center" data-title="Price"><span class="price"><?php echo $product["costs"] ?>грн</span></td>
+						<td class="product-quantity text-center" data-title="Quantity">
+							<div class="quantity">
+								<span class="minus"><img src="assets/images/minus.png" alt="minus"></span>
+								<input value="<?php echo $basket_massiv['basket'][$i]['count'] ?>" size="5">
+								<span class="plus"><img src="assets/images/plus.png" alt="plus"></span>
+							</div><!--quantity-->
+						</td>
+						<td class="product-price text-center" data-title="Total"><span class="price"><?php echo $product["costs"]*$basket_massiv['basket'][$i]['count'] ?>грн</span></td>
+						<td class="product-remove text-right"><button onclick="deleteProductBasket(this, <?php echo $product['id'] ?>)" class="btn_delete_product"><img src="assets/images/remove.png" alt="remove"></button></td>
+					</tr>
+<?php
+	}
+}
+?>
+
+				</tbody>
+			</table>
+			<div class="bottom-table">
+				<a href="shop.php" class="custom-btn">Обратно в магазин</a>
+				<span><a href="#"><img src="assets/images/refresh.png" alt="refresh">update cart</a></span>
+			</div><!--bottom-table-->
+		</div>
+		<!--================= End of Cart Inside ====================-->
+	</div>
+	<!--================= Checkout ====================-->
+	<div class="checkout bg-grey">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3 col-sm-3 col-xs-12 col-3">
-					<!--================= Sidebar ====================-->
-					<aside class="sidebar-shop">
-						<!--================= Widget Search  ====================-->
-						<div class="widget-search">
-							<h3 class="widget-title">Search</h3>
-							<form>
-								<div class="form-group">
-									<input type="text" placeholder="Search...">
-									<button><i class="fa fa-search"></i></button>
-								</div>
-							</form>
+				<div class="col-md-4">
+					<form>
+						<div class="form-group">
+							<label class="text-black">Coupon</label>
+							<input placeholder="Coupone Code" class="border-all border-color-extra-gray">
+							<button class="custom-btn white">Apply Coupon</button>
 						</div>
-						<!--================= End of Widget Search ====================-->
-						<!--================= Widget Category  ====================-->
-						<div class="widget-category">
-							<h3 class="widget-title">Category</h3>
-							<ul>
-								<li class="active widget-category-hover"><a href="#" class="text-black">All</a></li>
-								<li class="widget-category-hover"><a class="text-black" href="single-product.html">Fresh Fruit</a></li>
-								<li class="widget-category-hover"><a class="text-black" href="single-product.html">Herbs</a></li>
-								<li class="widget-category-hover"><a class="text-black" href="single-product.html">Fresh Meat</a></li>
-								<li class="widget-category-hover"><a class="text-black" href="single-product.html">Sea food</a></li>
-								<li class="widget-category-hover"><a class="text-black" href="single-product.html">Seed</a></li>
-								<li class="widget-category-hover"><a class="text-black" href="single-product.html">Spices</a></li>
-								<li class="widget-category-hover"><a class="text-black" href="single-product.html">Vegetable</a></li>
-								<li class="widget-category-hover"><a class="text-black" href="single-product.html">Milk</a></li>
-							</ul>
-						</div>
-						<!--================= End of Widget Category  ====================-->
-						<!--================= Widget Price  ====================-->
-						<div class="widget-price">
-							<h3 class="widget-title">Filter by Price</h3>
-							<div id="slider-range"></div>
-							<p>
-								<label for="amount">Price:</label>
-								<input type="text" id="amount" readonly>
-							</p>
-							<a href="#" class="custom-btn green">Filter</a>
-						</div>
-						<!--================= End of Widget Price  ====================-->
-						<!--================= Widget Recent Product  ====================-->
-						<div class="widget-recent-product">
-							<h3 class="widget-title">Recent Product</h3>
-							<ul>
-								<li>
-									<a href="single-product.html">
-										<img src="http://via.placeholder.com/68x68" alt="recent-product">
-										<span>Beech Nut - Just Pumpkin <span class="price">$ 6.49</span></span>
-									</a>
-								</li>
-								<li>
-									<a href="single-product.html">
-										<img src="http://via.placeholder.com/68x68" alt="recent-product">
-										<span>Detox Zero<span class="price">$ 6.49</span></span>
-									</a>
-								</li>
-								<li>
-									<a href="single-product.html">
-										<img src="http://via.placeholder.com/68x68" alt="recent-product">
-										<span>Low Cow - Lite Ice Cream<span class="price">$ 6.49</span></span>
-									</a>
-								</li>
-							</ul>
-						</div>
-						<!--================= End of Widget Recent Product  ====================-->
-					</aside>
-					<!--================= End of Sidebar ====================-->
+					</form>
 				</div>
-				<div class="col-md-9 col-sm-9 col-xs-12 col-9">
-					<!--================= Filter Wrap ====================-->
-					<div class="filter-wrap">
-						<p>Showing 1–8 of 22 results</p>
-						<div class="sorting">
-							<form>
+				<div class="col-md-4 center">
+					<form>
+						<div class="form-group">
+							<label class="text-black">Calculate shipping</label>
+							<div class="sorting border-all border-color-extra-gray">
 								<select>
-									<option value="Default">Default Sorting</option>
-									<option value="Default">ASC</option>
-									<option value="Default">DESC</option>
+									<option value="Ukraine">Ukraine</option>
+									<option value="Ukraine">Ukraine2</option>
 								</select>
-							</form>
-							<i class="fa fa-angle-down"></i>
-						</div><!--sorting-->
-						<div class="switch">
-							<span class="list"><i class="fa fa-list"></i></span>
-							<span class="grid-icon active"><i class="fa fa-th"></i></span>
-						</div><!--switch-->
+								<i class="fa fa-angle-down"></i>
+							</div>
+						</div>
+						<div class="form-group">
+							<input placeholder="Country / State" class="border-all border-color-extra-gray">
+						</div>
+						<div class="form-group">
+							<input placeholder="Postcode / Zip" class="border-all border-color-extra-gray">
+							<button class="custom-btn white">update totals</button>
+						</div>
+					</form>
+				</div>
+				<div class="col-md-4">
+					<!--===================== Checkout Form ========================-->
+					<div class="checkout-form">
+						<div class="subtotal">
+							<span>Subtotal</span><span class="price">$9,99</span>
+						</div><!--subtotal-->
+						<div class="shipping">
+							<span>Shipping</span>
+							<ul>
+								<li><label class="checkbox"><input type="checkbox" name="billing" value="company"><span class="label"><span>Flat Rate:</span><span class="price">$14</span></span></label></li>
+								<li><label class="checkbox"><input type="checkbox" name="billing" value="company"><span class="label"><span>Free shipping</span></span></label></li>
+								<li><label class="checkbox"><input type="checkbox" name="billing" value="company"><span class="label"><span>Local pickup</span></span></label></li>
+							</ul>
+						</div><!--shipping-->
+						<div class="total">
+							<span>Total</span><span class="price">$19,99</span>
+						</div><!--total-->
+						<div class="text-right"><button class="custom-btn" data-toggle="modal" data-target="#checkout-modal">proceed to checkout</button></div>
 					</div>
-					<!--================= End of Filter Wrap ====================-->
-					<!--================= Content Product ====================-->
-					<div class="content-product">
-						<div class="product">
-							<div class="images text-center">
-								<a href="single-product.html"><img src="http://via.placeholder.com/160x180" alt="product5"></a>
-								<div class="button-group">
-									<a href="cart.html" class="custom-btn pink"><i class="fa fa-shopping-bag"></i></a>
-									<a href="#" class="custom-btn pink"><i class="fa fa-search"></i></a>
-								</div><!--button-group-->
-							</div><!--images-->
-							<div class="info-product">
-								<a href="single-product.html" class="title">ORS - Olive Oil</a>
-								<span class="price">$9.99</span>
-							</div><!--info-product-->
-						</div><!--product-->
-						<div class="product">
-							<div class="images text-center">
-								<a href="single-product.html"><img src="http://via.placeholder.com/160x180" alt="product5"></a>
-								<div class="button-group">
-									<a href="cart.html" class="custom-btn pink"><i class="fa fa-shopping-bag"></i></a>
-									<a href="#" class="custom-btn pink"><i class="fa fa-search"></i></a>
-								</div><!--button-group-->
-							</div><!--images-->
-							<div class="info-product">
-								<a href="single-product.html" class="title">Beach Nut - Coldpure</a>
-								<span class="price">$6.49</span>
-							</div><!--info-product-->
-						</div><!--product-->
-						<div class="product">
-							<div class="images text-center">
-								<a href="single-product.html"><img src="http://via.placeholder.com/160x180" alt="product5"></a>
-								<div class="button-group">
-									<a href="cart.html" class="custom-btn pink"><i class="fa fa-shopping-bag"></i></a>
-									<a href="#" class="custom-btn pink"><i class="fa fa-search"></i></a>
-								</div><!--button-group-->
-							</div><!--images-->
-							<div class="info-product">
-								<a href="single-product.html" class="title">Detox Zero</a>
-								<span class="price">$16.99</span>
-							</div><!--info-product-->
-						</div><!--product-->
-						<div class="product">
-							<div class="images text-center">
-								<a href="single-product.html"><img src="http://via.placeholder.com/160x180" alt="product5"></a>
-								<div class="button-group">
-									<a href="cart.html" class="custom-btn pink"><i class="fa fa-shopping-bag"></i></a>
-									<a href="#" class="custom-btn pink"><i class="fa fa-search"></i></a>
-								</div><!--button-group-->
-							</div><!--images-->
-							<div class="info-product">
-								<a href="single-product.html" class="title">Low Cow - Lite Ice Cream</a>
-								<span class="price">$9.99</span>
-							</div><!--info-product-->
-						</div><!--product-->
-						<div class="product">
-							<div class="images text-center">
-								<a href="single-product.html"><img src="http://via.placeholder.com/160x180" alt="product5"></a>
-								<div class="button-group">
-									<a href="cart.html" class="custom-btn pink"><i class="fa fa-shopping-bag"></i></a>
-									<a href="#" class="custom-btn pink"><i class="fa fa-search"></i></a>
-								</div><!--button-group-->
-							</div><!--images-->
-							<div class="info-product">
-								<a href="single-product.html" class="title">Organic Girl - Romanie</a>
-								<span class="price">$4.79</span>
-							</div><!--info-product-->
-						</div><!--product-->
-						<div class="product">
-							<div class="images text-center">
-								<a href="single-product.html"><img src="http://via.placeholder.com/160x180" alt="product5"></a>
-								<div class="button-group">
-									<a href="cart.html" class="custom-btn pink"><i class="fa fa-shopping-bag"></i></a>
-									<a href="#" class="custom-btn pink"><i class="fa fa-search"></i></a>
-								</div><!--button-group-->
-							</div><!--images-->
-							<div class="info-product">
-								<a href="single-product.html" class="title">Beech Nut Just Pumpkin </a>
-								<span class="price">$9.69</span>
-							</div><!--info-product-->
-						</div><!--product-->
-						<div class="product">
-							<div class="images text-center">
-								<a href="single-product.html"><img src="http://via.placeholder.com/160x180" alt="product5"></a>
-								<div class="button-group">
-									<a href="cart.html" class="custom-btn pink"><i class="fa fa-shopping-bag"></i></a>
-									<a href="#" class="custom-btn pink"><i class="fa fa-search"></i></a>
-								</div><!--button-group-->
-							</div><!--images-->
-							<div class="info-product">
-								<a href="single-product.html" class="title">Mooala Original</a>
-								<span class="price">$10.99</span>
-							</div><!--info-product-->
-						</div><!--product-->
-						<div class="product">
-							<div class="images text-center">
-								<a href="single-product.html"><img src="http://via.placeholder.com/160x180" alt="product5"></a>
-								<div class="button-group">
-									<a href="cart.html" class="custom-btn pink"><i class="fa fa-shopping-bag"></i></a>
-									<a href="#" class="custom-btn pink"><i class="fa fa-search"></i></a>
-								</div><!--button-group-->
-							</div><!--images-->
-							<div class="info-product">
-								<a href="single-product.html" class="title">Vegan Burger - Veggie Mix</a>
-								<span class="price">$9.99</span>
-							</div><!--info-product-->
-						</div><!--product-->
+					<!--===================== End of Checkout Form ========================-->
+					<!--===================== Checkout Modal ========================-->
+					<div class="modal checkout-modal fade" id="checkout-modal" tabindex="-1" role="dialog">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<h3>Thank you</h3>
+								<p>for your purchase!</p>
+								<button type="button" class="btn" data-dismiss="modal"><img src="assets/images/close.png" alt="close"></button>
+							</div>
+						</div>
 					</div>
-					<!--================= End of Content Product ====================-->
-					<!--================= Pagination ====================-->
-					<ul class="pagination border-top border-color-gray">
-						<li class="active"><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li class="no-pointer"><a href="#">...</a></li>
-						<li><a href="#">10</a></li>
-					</ul><!--pagination-->
-					<!--================= End of Pagination ====================-->
+					<!--===================== End of Checkout Modal ========================-->
 				</div>
 			</div>
 		</div>
 	</div>
-	<!--================= End of Content Shop ====================-->
+	<!--================= End of Checkout ====================-->
 	<!--===================== Footer ========================-->
 	<footer class="bg-yellow">
 		<div class="container">
@@ -483,5 +406,6 @@
 <script src="assets/js/lib/jquery.counterup.min.js"></script>
 <script src="assets/js/lib/waypoints.min.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>
