@@ -1,15 +1,13 @@
+<?php
+	
+	include $_SERVER['DOCUMENT_ROOT'] . '/configs.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
-<<<<<<< HEAD
 	<title>Team work13212312313</title>
-=======
-	<title>Cinagro</title>
->>>>>>> parent of 7dc4afd... Изменил title
-=======
-	<title>Cinagro</title>
->>>>>>> parent of 7dc4afd... Изменил title
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5">
 	<!-- Framework Css -->
@@ -251,6 +249,13 @@
 						<span>health</span>
 					</a>
 				</li>
+				<?php 
+					$sql = "SELECT * FROM products WHERE id = 1";
+					$result = $conn->query($sql);
+					$product = mysqli_fetch_assoc($result);
+					echo $product["title"];
+				?>
+
 			</ul>
 		</div><!--category-product-->
 	</div>
