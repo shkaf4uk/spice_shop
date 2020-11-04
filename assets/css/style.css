@@ -1,12 +1,43 @@
+/**/
+
 /*====================
 Авторские стили
 ======================*/
-
-/*====================
-Подключение шрифтов для всего сайта
-======================*/
 .cursive-philosopher {
   font-family: 'Philosopher', sans-serif;
+}
+
+.container-prod {
+  position: relative;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  top: -125px;
+  width: 1400px;
+}
+
+.prod-item {
+  width: 300px !important;
+  margin-right: 20px !important;
+}
+
+.title-prod {
+  font-family: 'Philosopher', sans-serif;
+  display: block;
+  position: relative;
+  top: -85px;
+  left: 20px;
+  width: 256px;
+}
+
+.product .images img {
+  width: 217px;
+  height: auto;
+}
+
+a.title-prod {
+  cursor: pointer;
 }
 
 .container {
@@ -23,7 +54,6 @@
 .position-slider {
   position: relative;
   top: -80px;
-
 }
 
 .con-us-header:after {
@@ -67,6 +97,14 @@
 
 .menu-w-stuff {
   top: 41px !important;
+}
+
+.label-prod-slider {
+  display: block;
+  position: relative;
+  top: -20px;
+  font-size: 40px;
+  text-align: center;
 }
 /*====================
 КОНЕЦ авторских стилей
@@ -303,7 +341,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #fff969;
+  color: #730ccc;
   text-decoration: none;
 }
 a:focus {
@@ -346,6 +384,7 @@ input:-moz-placeholder {
 }
 .wrapper {
   position: relative;
+  height: 1929px;
 }
 /* 03. Custom Btn
    ==================================== */
@@ -673,7 +712,7 @@ header li:last-child {
 }
 .header .mega-menu ul li a {
   font-size: 18px;
-  font-family: 'BrandonRegular', serif;
+  font-family: 'Philosopher', sans-serif;
   text-transform: none;
 }
 .header .mega-menu ul li.first {
@@ -1051,7 +1090,8 @@ body .cart-modal .custom-btn:hover {
 /* 03. Product Slider/Slider Product
    ==================================== */
 .slider-product.owl-carousel .owl-item img {
-  width: auto;
+  width: 287px;
+  border-radius: 15px;
   margin: 0 auto;
 }
 .product {
@@ -1061,8 +1101,8 @@ body .cart-modal .custom-btn:hover {
 .product .images {
   background-color: #f3f7f6;
   position: relative;
-  padding: 80px 0;
-  height: 430px;
+  padding: 10px 10px 100px;
+  height: 370px;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 20px;
@@ -1070,7 +1110,6 @@ body .cart-modal .custom-btn:hover {
       align-items: center;
   -ms-flex-pack: center;
       justify-content: center;
-  text-align: center;
   transition: 0.2s linear;
 }
 .product .images img {
@@ -1118,12 +1157,12 @@ body .cart-modal .custom-btn:hover {
   font-size: 24px;
   color: #1e1e1e;
   margin-bottom: 14px;
-  font-family: 'BrandonMedium', serif;
+  font-family: 'Philosopher', sans-serif;
 }
 .product .info-product .price {
   font-size: 20px;
   color: #878787;
-  font-family: 'BrandonMedium', serif;
+  font-family: 'Philosopher', sans-serif;
 }
 .product .info-product .price del {
   color: #d1d1d1;
