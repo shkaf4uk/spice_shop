@@ -17,6 +17,10 @@
   width: 1400px;
 }
 
+.owl-dots {
+  display: none !important;
+}
+
 .prod-item {
   width: 300px !important;
   margin-right: 20px !important;
