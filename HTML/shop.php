@@ -159,13 +159,14 @@
 						<li><a href="#"><i class="fa fa-volume-control-phone"></i>+91-141-4007601</a></li>
 						<li class="search-icon"><a href="#"><i class="fa fa-search"></i>search</a></li>
 						<li class="cart">
-							<a href="cart.php"><i class="fa fa-shopping-bag"></i>Bag (0)</a>
+							<a href="cart.php"><i class="fa fa-shopping-bag"></i>Корзина (0)</a>
 							<div class="cart-modal">
 
 <?php
+				$sum = 0;
 		  		if (isset($_COOKIE['basket'])){
 		  			$basket_massiv = json_decode($_COOKIE['basket'], true);
-		  			$sum = 0;
+		  			
 		  			//Вывод добавленных товаров в модальном окне
 		  			for ($i=0; $i< count($basket_massiv['basket']); $i++){
 		  				$sql = "SELECT * FROM products WHERE id=". $basket_massiv['basket'][$i]['product_id'];
@@ -189,11 +190,10 @@
 }
 ?>
 								<div class="total">
-									Итого в корзине: <span class="price"><?php echo $sum ?>грн</span>
+									Итого в корзине: <span class="price"><?php if($sum != 0){echo $sum; echo "грн"; } else { echo "пусто"; } ?></span>
 								</div>
 								<div class="button">
-									<a href="cart.html" class="custom-btn">view cart</a>
-									<a href="cart.html" class="custom-btn pink">checkout</a>
+									<a href="cart.php" class="custom-btn pink">Просмотреть корзину</a>
 								</div>
 							</div><!--cart-modal-->
 						</li>

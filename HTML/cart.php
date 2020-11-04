@@ -217,7 +217,7 @@
 	<div class="container">
 		<!--================= Cart Inside ====================-->
 		<div class="cart-inside">
-			<h3>Товары в вашей корзине</h3>
+			<h4>Товары в вашей корзине</h4>
 			<table>
 				<thead>
 					<tr>
