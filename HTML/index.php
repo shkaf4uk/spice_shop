@@ -249,24 +249,10 @@
 						<span>health</span>
 					</a>
 				</li>
-				<?php 
-					$sql = "SELECT * FROM products WHERE id = 1";
-					$result = $conn->query($sql);
-					$product = mysqli_fetch_assoc($result);
-					echo $product["title"];
-				?>
 
 			</ul>
 		</div><!--category-product-->
 	</div>
-	<!--=============== End of Category Product ==================-->
-	<!--=================== Product Slider =======================-->
-	
-	<!--=============== End of Product Slider ===================-->
-	
-	<!--=================== Grid Product =======================-->
-	
-	<!--===================== Footer ========================-->
 	<footer class="bg-yellow">
 		<div class="container">
 			<div class="row">
