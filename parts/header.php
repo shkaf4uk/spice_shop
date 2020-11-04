@@ -57,49 +57,51 @@
 					<li><a class="cursive-philosopher" href="/">Главная</a></li>
 					<li class="mega-menu-top">
 						<a href="#" class="cursive-philosopher">Товары</a>
-						<div class="menu-w-stuff mega-menu columns-4">
+
+						<div class="cursive-philosopher menu-w-stuff mega-menu columns-4">
 							<ul>
-								<li class="first">Fruit &amp; Veg</li>
-								<li><a href="#">Set Boxes</a></li>
-								<li><a href="#">Fruit</a></li>
-								<li><a href="#">Veg</a></li>
-								<li><a href="#">Salad</a></li>
-								<li><a href="#">Herbs</a></li>
-								<li><a href="#">Organic</a></li>
-								<li><a href="#">Juice &amp; Smoothies</a></li>
-								<li><a href="#">Nuts &amp; Dried Fruit</a></li>
-								<li><a href="#">Gourmet Pantry</a></li>
+								<li class="first">Специи</li>
+								<li><a href="#">Бадьян</a></li>
+								<li><a href="#">Базилик</a></li>
+								<li><a href="#">Молотый имбирь</a></li>
+								<li><a href="#">Какао</a></li>
+								<li><a href="#">Кориандр</a></li>
+								<li><a href="#">Корица</a></li>
+								<li><a href="#">Кунжут</a></li>
+								<li><a href="#">Куркума</a></li>
 							</ul>
 							<ul>
-								<li class="first">Dairy</li>
-								<li><a href="#">Milk</a></li>
-								<li><a href="#">Cheese</a></li>
-								<li><a href="#">Specialty Cheese</a></li>
-								<li><a href="#">Yoghurt</a></li>
-								<li><a href="#">Butter</a></li>
-								<li><a href="#">Cream</a></li>
-								<li><a href="#">Dips &amp; Antipasto</a></li>
+								<li class="first">Чай</li>
+								<li><a href="#">Травянной</a></li>
+								<li><a href="#">Заварки</a></li>
+								<li><a href="#">Пакетики</a></li>
+								<li><a href="#">Подарочные наборы</a></li>
+								<li><a href="#">Белый чай</a></li>
+								<li><a href="#">Улуни</a></li>
+								<li><a href="#">Шу Пуер</a></li>
+								<li><a href="#">Шен Пуер</a></li>
+								<li><a href="#">Матча</a></li>
 							</ul>
 							<ul>
-								<li class="first">Frozen</li>
-								<li><a href="#">Frozen Vegetables</a></li>
-								<li><a href="#">Frozen Desserts &amp; Bakery</a></li>
-								<li><a href="#">Frozen Seafood</a></li>
-								<li><a href="#">Frozen Breakfast Food</a></li>
-								<li><a href="#">Frozen Fruit</a></li>
-								<li><a href="#">Ice</a></li>
-								<li><a href="#">Frozen Appetizers</a></li>
+								<li class="first">Сухофрукты и <br>орехи</li>
+								<li><a href="#">Финики</a></li>
+								<li><a href="#">Черника</a></li>
+								<li><a href="#">Изюм</a></li>
+								<li><a href="#">Курага</a></li>
+								<li><a href="#">Кешью</a></li>
+								<li><a href="#">Миндаль</a></li>
+								<li><a href="#">Фисташки</a></li>
 							</ul>
 							<ul>
-								<li class="first">Superfoods</li>
-								<li><a href="#">Ayurverdic</a></li>
-								<li><a href="#">South American</a></li>
-								<li><a href="#">Green &amp; Fungi</a></li>
-								<li><a href="#">Cacao &amp; Coconut</a></li>
-								<li><a href="#">Fruit &amp; Hemp</a></li>
-								<li><a href="#">Superfood Teas</a></li>
-								<li><a href="#">Superfood Snacks</a></li>
-								<li><a href="#">Superfood Juices</a></li>
+								<li class="first">Кофе</li>
+								<li><a href="#">Кофе в зёрнах</a></li>
+								<li><a href="#">Кофе для фильтров</a></li>
+								<li><a href="#">Кофе для еспресо</a></li>
+								<li><a href="#">Кофе для гейзера</a></li>
+								<li><a href="#">Кофе для джезви</a></li>
+								<li><a href="#">Подарочные наборы</a></li>
+								<li><a href="#">Кофе в дрип-пакетах</a></li>
+
 							</ul>
 						</div><!--mega-menu-->
 					</li><!--children-->
@@ -107,9 +109,8 @@
 						<a class="cursive-philosopher" href="about.html">О нас</a>
 						<ul class="sub-menu">
 							<li><a href="#">Почему именно SpecialSpicy?</a></li>
-							<li><a href="#">Organic Leadership Awards</a></li>
-							<li><a href="#">Verification &amp; Certification</a></li>
-							<li><a href="#">Organic Standards</a></li>
+							<li><a href="#">Сертификаты качества</a></li>
+							<li><a href="#">Договора продажи</a></li>
 						</ul><!--sub-menu-->
 					</li>
 					<li><a class="cursive-philosopher" href="blog.html">Рецепты</a></li>
@@ -162,10 +163,8 @@
 					<li class="cart">
 						<a class="cursive-philosopher" href="cart.php"><i class="fa fa-shopping-bag"></i>Корзина (0)</a>
 						<div class="cart-modal">
-
 <?php 
 		  			//Вывод добавленных товаров в модальном окне (при наведении на корзину)
-
 				$sum = 0;
 		  		if (isset($_COOKIE['basket'])){
 		  			$basket_massiv = json_decode($_COOKIE['basket'], true);
@@ -175,7 +174,6 @@
 		  				$result = $conn -> query($sql);
 		  				$product = mysqli_fetch_assoc($result);
 		  				$countBasket = $basket_massiv['basket'][$i]['count'];
-
 ?>
 								<ul>
 									<li>

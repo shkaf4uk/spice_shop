@@ -2,11 +2,40 @@
 Авторские стили
 ======================*/
 
+
 /*====================
 Подключение шрифтов для всего сайта
 ======================*/
 .cursive-philosopher {
   font-family: 'Philosopher', sans-serif;
+}
+
+.container-prod {
+  position: relative;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  top: -125px;
+  width: 1400px;
+}
+
+.owl-dots {
+  display: none !important;
+}
+
+.prod-item {
+  width: 300px !important;
+  margin-right: 20px !important;
+}
+
+.title-prod {
+  font-family: 'Philosopher', sans-serif;
+  display: block;
+  position: relative;
+  top: -85px;
+  left: 20px;
+  width: 256px;
 }
 
 .container {
@@ -23,7 +52,6 @@
 .position-slider {
   position: relative;
   top: -80px;
-
 }
 
 .con-us-header:after {

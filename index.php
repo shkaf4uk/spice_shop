@@ -1,5 +1,5 @@
-
 	<!--===================== Header ========================-->
+
 <?php
 	include $_SERVER['DOCUMENT_ROOT'] .'/parts/header.php';
 ?>
@@ -58,14 +58,18 @@
 		</div><!--category-product-->
 	</div>
 	<!--=============== End of Category Product ==================-->
+	
 	<!--=================== Product Slider =======================-->
 	
 	<!--=============== End of Product Slider ===================-->
 
 	
 	
-	<!--===================== Footer ========================-->
+
+	<!--=================== Grid Product =======================-->
+</div><!--wrapper-->
+<!--===================== Footer ========================-->
 <?php
 	include $_SERVER['DOCUMENT_ROOT'] .'/parts/footer.php';
 ?>
-	<!--================= End of Footer =====================-->
+
