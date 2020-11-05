@@ -270,11 +270,24 @@ $( document ).on('ready', function(){
 
 	$(quantity).on('click', '.minus', function (){
 		var $input = $(this).parent().find('input');
+		let totalPriceBasket = document.querySelector('.total_price_basket');
+		let str = totalPriceBasket.innerHTML;
+
 		let price = parseInt($input[0].offsetParent.previousElementSibling.innerText);
 		let id = $input.context.attributes[1].nodeValue;
 		var count = parseInt($input.val(),10) - 1;
 
-		count = count < 1 ? 1 : count;
+		if (count < 1) {
+			count = 1;
+		} else {
+			count = count;
+			let totalPrice = parseInt(str.replace(/[^\d]/g, '')) - price;
+			totalPriceBasket.innerHTML = "Итого: " + totalPrice + "грн";
+
+			let countBasketHeader = document.querySelector('.count_basket_header');
+			let number = parseInt(countBasketHeader.innerHTML) - 1;
+			countBasketHeader.innerHTML = number;
+		}
 
 		$input.val(count)[0].defaultValue = count ;
 		let value = $input.val(count)[0].defaultValue;
@@ -291,6 +304,9 @@ $( document ).on('ready', function(){
 
 	$(quantity).on('click', '.plus', function(){
 		var $input = $(this).parent().find('input');
+		let totalPriceBasket = document.querySelector('.total_price_basket');
+		let str = totalPriceBasket.innerHTML;
+
 		let price = parseInt($input[0].offsetParent.previousElementSibling.innerText);
 		let id = $input.context.dataset.id;
 
@@ -300,6 +316,13 @@ $( document ).on('ready', function(){
 
 		let value = $input[0].defaultValue;
 		$input[0].offsetParent.nextElementSibling.innerText = price*value + "грн";;
+
+		let totalPrice = parseInt(str.replace(/[^\d]/g, '')) + price;
+		totalPriceBasket.innerHTML = "Итого: " + totalPrice + "грн";
+		//Изменение отображения количества в корзине header.php 
+		let countBasketHeader = document.querySelector('.count_basket_header');
+		let number = parseInt(countBasketHeader.innerHTML) + 1;
+		countBasketHeader.innerHTML = number;
 
 		var ajax = new XMLHttpRequest();
 			ajax.open("POST", siteURL + "/modules/basket/change_count.php", false );

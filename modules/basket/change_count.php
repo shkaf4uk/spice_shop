@@ -1,12 +1,6 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] .'/configs/db.php';
 
-
-
-// 		$basket_massiv = json_decode($_COOKIE['basket'], true);
-
-// var_dump($basket_massiv);
-
 // Если есть POST запрос, то
 if (isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
 
@@ -15,7 +9,6 @@ if (isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
 
 		// Принимает закодированную в JSON строку и преобразует ее в переменную (массив)
 		$basket_massiv = json_decode($_COOKIE['basket'], true);
-var_dump($basket_massiv);
 
 		for ($i=0; $i < count($basket_massiv['basket']); $i++){
 

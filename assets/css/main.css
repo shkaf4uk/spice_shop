@@ -10,3 +10,7 @@ body .cart-modal li img {
 	background: none;
 	border: none;
 }
+
+.total_price_basket {
+	font-size: 25px;
+}
