@@ -72,70 +72,77 @@
 	</div>
 	<!--================= Checkout ====================-->
 	<div class="checkout bg-grey">
+
 		<div class="container">
+			<h2 class="order_basket text-center">Оформление заказа</h2>
 			<div class="row">
 				<div class="col-md-4">
 					<form>
 						<div class="form-group">
-							<label class="text-black">Coupon</label>
-							<input placeholder="Coupone Code" class="border-all border-color-extra-gray">
-							<button class="custom-btn white">Apply Coupon</button>
+							<label class="text-black">Промо-код</label>
+							<input placeholder="промо-код" class="border-all border-color-extra-gray">
+							<button class="custom-btn white">Применить код</button>
 						</div>
 					</form>
 				</div>
-				<div class="col-md-4 center">
-					<form>
+
+			<!-- Форма отправки заказа -->
+				<form id="form__send__order" action="modules/send_order.php" method="POST">
+					<div class="col-md-4 center">
 						<div class="form-group">
-							<label class="text-black">Calculate shipping</label>
+							<label class="text-black">ФИО</label>
+							<input placeholder="ФИО" name="full_name" class="border-all border-color-extra-gray">
+						</div>
+						<div class="form-group">
+							<input placeholder="номер телефона" name="phone" class="border-all border-color-extra-gray">
+						</div>
+						<div class="form-group">
+							<input placeholder="example@gmail.com" name="email" class="border-all border-color-extra-gray">
+							<!-- <button class="custom-btn white">update totals</button> -->
+						</div>
+					</div>
+
+					<div class="col-md-4 center">
+						<div class="form-group">
+							<label class="text-black">Доставка</label>
+							<input placeholder="область" name="area" class="border-all border-color-extra-gray">
+						</div>
+						<div class="form-group">
+							<input placeholder="город" name="city" class="border-all border-color-extra-gray">
+						</div>
+						<div class="form-group">
 							<div class="sorting border-all border-color-extra-gray">
-								<select>
-									<option value="Ukraine">Ukraine</option>
-									<option value="Ukraine">Ukraine2</option>
+								<select name="chose_delivery">
+									<option value="1">НОВАЯ ПОЧТА</option>
+									<option value="2">УКРПОЧТА</option>
+									<option value="3">ИН ТАЙМ</option>
+									<option value="4">САМОВЫВОЗ</option>
 								</select>
 								<i class="fa fa-angle-down"></i>
-							</div>
+							</div>	
 						</div>
-						<div class="form-group">
-							<input placeholder="Country / State" class="border-all border-color-extra-gray">
-						</div>
-						<div class="form-group">
-							<input placeholder="Postcode / Zip" class="border-all border-color-extra-gray">
-							<button class="custom-btn white">update totals</button>
-						</div>
-					</form>
-				</div>
-				<div class="col-md-4">
-					<!--===================== Checkout Form ========================-->
+					</div>
+
 					<div class="checkout-form">
-						<div class="subtotal">
-							<span>Subtotal</span><span class="price">$9,99</span>
+						<div class="col-md-4">
+							<span class="col-md-8 text-left" style="padding-left: 0px;">Промежуточный итог:</span>
+							<span class="col-md-4 text-right"><?php if($sum != 0){echo $sum; echo "грн"; } else { echo "0грн"; } ?></span>
 						</div><!--subtotal-->
-						<div class="shipping">
-							<span>Shipping</span>
-							<ul>
-								<li><label class="checkbox"><input type="checkbox" name="billing" value="company"><span class="label"><span>Flat Rate:</span><span class="price">$14</span></span></label></li>
-								<li><label class="checkbox"><input type="checkbox" name="billing" value="company"><span class="label"><span>Free shipping</span></span></label></li>
-								<li><label class="checkbox"><input type="checkbox" name="billing" value="company"><span class="label"><span>Local pickup</span></span></label></li>
-							</ul>
+						<div class="col-md-4">
+							<span class="col-md-8 text-left" style="padding-left: 0px;">Доставка: Новая почта</span>
+							<span class="col-md-4 text-right">40грн</span>
 						</div><!--shipping-->
-						<div class="total">
-							<span>Total</span><span class="price">$19,99</span>
+						<div class="col-md-4">
+							<span class="col-md-8 text-left" style="padding-left: 0px;">Всего:</span>
+							<span class="col-md-4 text-right"><?php if($sum != 0){echo $sum; echo "грн"; } else { echo "0грн"; } ?></span>
+							<input type="hidden" name="total_price" value="<?php if($sum != 0){echo $sum; echo "грн"; } else { echo "0грн"; } ?>">
 						</div><!--total-->
-						<div class="text-right"><button class="custom-btn" data-toggle="modal" data-target="#checkout-modal">proceed to checkout</button></div>
 					</div>
+					<div class="col-md-12 text-center"><button type="submit" class="custom-btn btn_send_orders">Оформить заказ</button></div>
+				</form>
 					<!--===================== End of Checkout Form ========================-->
-					<!--===================== Checkout Modal ========================-->
-					<div class="modal checkout-modal fade" id="checkout-modal" tabindex="-1" role="dialog">
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<h3>Thank you</h3>
-								<p>for your purchase!</p>
-								<button type="button" class="btn" data-dismiss="modal"><img src="assets/images/close.png" alt="close"></button>
-							</div>
-						</div>
-					</div>
-					<!--===================== End of Checkout Modal ========================-->
-				</div>
+
+
 			</div>
 		</div>
 	</div>

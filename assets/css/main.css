@@ -14,3 +14,16 @@ body .cart-modal li img {
 .total_price_basket {
 	font-size: 25px;
 }
+
+.order_basket {
+	padding-bottom: 20px;
+}
+
+.checkout {
+    padding: 120px 0;
+}
+
+.btn_send_orders {
+	margin-top: 20px;
+}
+
