@@ -29,6 +29,14 @@ function deleteProductBasket(obj, id){
 	let number = parseInt(countBasketHeader.innerHTML) - colDelete;
 		countBasketHeader.innerHTML = number;
 
+	//Промежуточная цена в форме оформления заказа
+	let formSubTotalPrice = document.querySelector('.form__sub__total__price');
+		formSubTotalPrice.innerText = totalPrice + "грн";
+
+	//итоговая цена в форме оформления заказа
+	let formTotalPrice = document.querySelector('.form__total__price');
+		formTotalPrice.innerText = totalPrice + "грн";
+
 	let ajax = new XMLHttpRequest();
 		ajax.open("POST", siteURL + "/modules/basket/delete.php", false );
 		ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -36,8 +44,6 @@ function deleteProductBasket(obj, id){
 
 		//удалить строку с товаром 
 		obj.parentNode.parentNode.remove();
-
-
 }
 
 
@@ -53,6 +59,73 @@ function checkCart(elem){
 }
 
 
-function SelectValue(event) {
-	console.dir(event);
+//Выбор способа доставки в форме оформления заказа
+function SelectValue(chose) {
+	let shippingTotal = document.querySelector('.shipping__total');
+	let shippingPrice = document.querySelector('.shipping__price');
+
+	if (chose.value == 1){
+		shippingTotal.innerHTML = "Доставка: " + "<b>" + "Новая почта" + "</b>" ;
+		shippingPrice.innerHTML = 40 + "грн";
+	} else if (chose.value == 2){
+		shippingTotal.innerHTML = "Доставка: " + "<b>" + "УКРПОЧТА" + "</b>";
+		shippingPrice.innerHTML = 30 + "грн";
+	} else if (chose.value == 3){
+		shippingTotal.innerHTML = "Доставка: " + "<b>" + "ИН ТАЙМ" + "</b>";
+		shippingPrice.innerHTML = 35 + "грн";
+	} else {
+		shippingTotal.innerHTML = "Доставка: " + "<b>" + "Самовывоз" + "</b>";
+		shippingPrice.innerHTML = 0 + "грн";
+	}
+
+	let totalPriceBasket = document.querySelector('.total_price_basket');
+	let str = totalPriceBasket.innerHTML;
+	let totalPrice = parseInt(str.replace(/[^\d]/g, ''));
+
+	//Промежуточная цена в форме оформления заказа
+	let formSubTotalPrice = document.querySelector('.form__sub__total__price');
+
+	//Итоговая цена в форме при выборе доставки
+	let formTotalPrice = document.querySelector('.form__total__price');
+		formTotalPrice.innerText = parseInt(formSubTotalPrice.innerText) + parseInt(shippingPrice.innerHTML) + "грн";
+
+	//записали в скрытый инпут значение
+	let inputTotalPrice = document.querySelector(".input_total_price");
+	inputTotalPrice.value = formTotalPrice.innerText;
 }
+
+
+// ПРОМО-КОД
+let formPromoCod = document.querySelector('#form_promo_cod');
+
+if (formPromoCod != null) {
+	formPromoCod.onsubmit = function (event) {
+		event.preventDefault();
+		let promo = 1;
+
+		let inputPromoCod = document.querySelector('.input_promo_cod');
+		if (inputPromoCod.value == "promo95" || inputPromoCod.value == "spice95"){
+			promo = 0.95;
+		} else if (inputPromoCod.value == "promoVIP" || inputPromoCod.value == "spiceVIP"){
+			promo = 0.90;
+		}
+
+		//общая цена в корзине
+		let totalPriceBasket = document.querySelector('.total_price_basket');
+		let str = totalPriceBasket.innerHTML;
+		let totalPrice = parseInt(str.replace(/[^\d]/g, ''));
+		let shippingPrice = document.querySelector('.shipping__price');
+
+		//Промежуточная цена в форме оформления заказа
+		let formSubTotalPrice = document.querySelector('.form__sub__total__price');
+			formSubTotalPrice.innerText = parseInt(totalPrice*promo) + "грн";
+
+		//Итоговая цена в форме оформления заказа
+		let formTotalPrice = document.querySelector('.form__total__price');
+			formTotalPrice.innerText = parseInt(formSubTotalPrice.innerText) + parseInt(shippingPrice.innerHTML) + "грн";
+
+		//записали в скрытый инпут значение
+		let inputTotalPrice = document.querySelector(".input_total_price");
+		inputTotalPrice.value = formTotalPrice.innerText;
+	}	
+} 

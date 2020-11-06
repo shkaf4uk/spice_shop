@@ -281,12 +281,22 @@ $( document ).on('ready', function(){
 			count = 1;
 		} else {
 			count = count;
+			//итоговая цена в корзине
 			let totalPrice = parseInt(str.replace(/[^\d]/g, '')) - price;
-			totalPriceBasket.innerHTML = "Итого: " + totalPrice + "грн";
+				totalPriceBasket.innerHTML = "Итого: " + totalPrice + "грн";
 
+			//Промежуточная цена в форме оформления заказа
+			let formSubTotalPrice = document.querySelector('.form__sub__total__price');
+				formSubTotalPrice.innerText = totalPrice + "грн";
+
+			//итоговая цена в форме оформления заказа
+			let formTotalPrice = document.querySelector('.form__total__price');
+				formTotalPrice.innerText = totalPrice + "грн";
+
+			//количество товара в корзине (header)
 			let countBasketHeader = document.querySelector('.count_basket_header');
 			let number = parseInt(countBasketHeader.innerHTML) - 1;
-			countBasketHeader.innerHTML = number;
+				countBasketHeader.innerHTML = number;
 		}
 
 		$input.val(count)[0].defaultValue = count ;
@@ -315,14 +325,24 @@ $( document ).on('ready', function(){
 		$input.change();
 
 		let value = $input[0].defaultValue;
-		$input[0].offsetParent.nextElementSibling.innerText = price*value + "грн";;
+			$input[0].offsetParent.nextElementSibling.innerText = price*value + "грн";;
 
+		//итоговая цена в корзине
 		let totalPrice = parseInt(str.replace(/[^\d]/g, '')) + price;
-		totalPriceBasket.innerHTML = "Итого: " + totalPrice + "грн";
+			totalPriceBasket.innerHTML = "Итого: " + totalPrice + "грн";
+
+		//Промежуточная цена в форме оформления заказа
+		let formSubTotalPrice = document.querySelector('.form__sub__total__price');
+			formSubTotalPrice.innerText = totalPrice + "грн";
+		
+		//итоговая цена в форме оформления заказа
+		let formTotalPrice = document.querySelector('.form__total__price');
+			formTotalPrice.innerText = totalPrice + "грн";
+
 		//Изменение отображения количества в корзине header.php 
 		let countBasketHeader = document.querySelector('.count_basket_header');
 		let number = parseInt(countBasketHeader.innerHTML) + 1;
-		countBasketHeader.innerHTML = number;
+			countBasketHeader.innerHTML = number;
 
 		var ajax = new XMLHttpRequest();
 			ajax.open("POST", siteURL + "/modules/basket/change_count.php", false );

@@ -1,8 +1,6 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] .'/configs/db.php';
-?>
 
-<?php 
 //Вывод добавленных товаров в модальном окне (при наведении на корзину)
 $sum = 0;
 if (isset($_COOKIE['basket'])){

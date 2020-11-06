@@ -78,11 +78,12 @@
 			<h2 class="order_basket text-center">Оформление заказа</h2>
 			<div class="row">
 				<div class="col-md-4">
-					<form>
+					<!-- ПРОМО-КОД -->
+					<form id="form_promo_cod" method="POST" action="#">
 						<div class="form-group">
 							<label class="text-black">Промо-код</label>
-							<input placeholder="промо-код" class="border-all border-color-extra-gray">
-							<button class="custom-btn white">Применить код</button>
+							<input placeholder="промо-код" class="border-all border-color-extra-gray input_promo_cod" name="promo_cod">
+							<button class="custom-btn white" type="submit">Применить код</button>
 						</div>
 					</form>
 				</div>
@@ -95,11 +96,10 @@
 							<input placeholder="ФИО" name="full_name" class="border-all border-color-extra-gray">
 						</div>
 						<div class="form-group">
-							<input placeholder="номер телефона" name="phone" class="border-all border-color-extra-gray">
+							<input placeholder="номер телефона" required name="phone" class="border-all border-color-extra-gray">
 						</div>
 						<div class="form-group">
-							<input placeholder="example@gmail.com" name="email" class="border-all border-color-extra-gray">
-							<!-- <button class="custom-btn white">update totals</button> -->
+							<input placeholder="example@gmail.com" required name="email" class="border-all border-color-extra-gray">
 						</div>
 					</div>
 
@@ -130,24 +130,20 @@
 					<div class="checkout-form">
 						<div class="col-md-4">
 							<span class="col-md-8 text-left" style="padding-left: 0px;">Промежуточный итог:</span>
-							<span class="col-md-4 text-right"><?php if($sum != 0){echo $sum; echo "грн"; } else { echo "0грн"; } ?></span>
-						</div><!--subtotal-->
+							<span class="col-md-4 text-right form__sub__total__price">
+								<?php if($sum != 0){echo $sum; echo "грн"; } else { echo "0грн"; } ?>
+							</span>
+						</div>
 						<div class="col-md-4">
-							<span class="col-md-8 text-left" style="padding-left: 0px;">Доставка: 
-								<?php 
-								$sql = "SELECT * FROM delivery";
-                                $result = $conn ->query($sql);
-                                $row = mysqli_fetch_assoc($result);
-								echo $row["shipping"]; 
-
-								?></span>
-							<span class="col-md-4 text-right"><?php echo $row["price"]  ?>грн</span>
-						</div><!--shipping-->
+							<span class="col-md-8 text-left shipping__total" style="padding-left: 0px;">Доставка: <b>Самовывоз</b></span>
+							<span class="col-md-4 text-right shipping__price">0грн</span>
+						</div>
 						<div class="col-md-4">
-							<span class="col-md-8 text-left" style="padding-left: 0px;">Всего:</span>
-							<span class="col-md-4 text-right"><?php if($sum != 0){echo $sum+$row["price"]; echo "грн"; } else { echo "0грн"; } ?></span>
-							<input type="hidden" name="total_price" value="<?php if($sum != 0){echo $sum; echo "грн"; } else { echo "0грн"; } ?>">
-						</div><!--total-->
+							<span class="col-md-8 text-left" style="padding-left: 0px;"><b>Всего к оплате:</b></span>
+							<span class="col-md-4 text-right form__total__price"><?php if($sum != 0){echo $sum; echo "грн"; } else { echo "0грн"; } ?>
+							</span>
+							<input type="hidden" class="input_total_price" name="total_price" value="<?php if($sum != 0){echo $sum; echo "грн"; } else { echo "0грн"; } ?>">
+						</div>
 					</div>
 					<div class="col-md-12 text-center"><button type="submit" class="custom-btn btn_send_orders">Оформить заказ</button></div>
 				</form>

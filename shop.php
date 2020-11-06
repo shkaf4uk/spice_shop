@@ -1,6 +1,7 @@
 	<!--===================== Header ========================-->
 <?php
 	include $_SERVER['DOCUMENT_ROOT'] .'/parts/header.php';
+
 ?>
 	<!--============== End of Header ========================-->
 	<!--================= Breadcrumb ====================-->
@@ -184,5 +185,8 @@ while ($row = mysqli_fetch_assoc($product)){
 	<!--===================== Footer ========================-->
 <?php
 	include $_SERVER['DOCUMENT_ROOT'] .'/parts/footer.php';
+		if ($_GET["successful_order"] == "yes"){
+		echo '<script type="text/javascript">alert("ВАША ЗАЯВКА УСПЕШНО ОФОРМЛЕНА")</script>';
+	}
 ?>
 	<!--================= End of Footer =====================-->
