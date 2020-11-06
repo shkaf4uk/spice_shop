@@ -51,3 +51,8 @@ function checkCart(elem){
 	let cart = document.querySelector('.cart-modal');
 	cart.innerHTML = response ;
 }
+
+
+function SelectValue(event) {
+	console.dir(event);
+}

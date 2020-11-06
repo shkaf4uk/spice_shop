@@ -112,11 +112,14 @@
 						</div>
 						<div class="form-group">
 							<div class="sorting border-all border-color-extra-gray">
-								<select name="chose_delivery">
-									<option value="1">НОВАЯ ПОЧТА</option>
-									<option value="2">УКРПОЧТА</option>
-									<option value="3">ИН ТАЙМ</option>
-									<option value="4">САМОВЫВОЗ</option>
+								<select name="chose_delivery" onchange="SelectValue(this)">
+									<?php 
+                                        $sql = "SELECT * FROM delivery";
+                                        $result = $conn ->query($sql);
+                                        while($row = mysqli_fetch_assoc($result)){
+                                            echo "<option value='" . $row["id"] . "' >". $row["shipping"] ."</option>";
+                                        }
+                                    ?>
 								</select>
 								<i class="fa fa-angle-down"></i>
 							</div>	
@@ -129,12 +132,19 @@
 							<span class="col-md-4 text-right"><?php if($sum != 0){echo $sum; echo "грн"; } else { echo "0грн"; } ?></span>
 						</div><!--subtotal-->
 						<div class="col-md-4">
-							<span class="col-md-8 text-left" style="padding-left: 0px;">Доставка: Новая почта</span>
-							<span class="col-md-4 text-right">40грн</span>
+							<span class="col-md-8 text-left" style="padding-left: 0px;">Доставка: 
+								<?php 
+								$sql = "SELECT * FROM delivery";
+                                $result = $conn ->query($sql);
+                                $row = mysqli_fetch_assoc($result);
+								echo $row["shipping"]; 
+
+								?></span>
+							<span class="col-md-4 text-right"><?php echo $row["price"]  ?>грн</span>
 						</div><!--shipping-->
 						<div class="col-md-4">
 							<span class="col-md-8 text-left" style="padding-left: 0px;">Всего:</span>
-							<span class="col-md-4 text-right"><?php if($sum != 0){echo $sum; echo "грн"; } else { echo "0грн"; } ?></span>
+							<span class="col-md-4 text-right"><?php if($sum != 0){echo $sum+$row["price"]; echo "грн"; } else { echo "0грн"; } ?></span>
 							<input type="hidden" name="total_price" value="<?php if($sum != 0){echo $sum; echo "грн"; } else { echo "0грн"; } ?>">
 						</div><!--total-->
 					</div>

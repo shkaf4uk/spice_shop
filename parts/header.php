@@ -162,9 +162,10 @@
 					<li class="cursive-philosopher" class="search-icon"><a href="#"><i class="fa fa-search"></i>Искать</a></li>
 					<li class="cart">
 <?php
+$count = 0;
 if (isset($_COOKIE['basket'])){
 	$basket_massiv = json_decode($_COOKIE['basket'], true);
-	$count = 0;
+	
 	for ($i=0; $i< count($basket_massiv['basket']); $i++){
 		$count = $count + $basket_massiv['basket'][$i]["count"];
 	}
