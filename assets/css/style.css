@@ -76,7 +76,7 @@ img.height-no {
   width: 600px;
   height: 250px;
   position: relative;
-  top: -200px;
+  top: 35px;
 }
 
 .info-image-right {
@@ -129,7 +129,7 @@ img.height-no {
   height: 3000px;
   background: url(bg/bg-product.png);
   position: relative;
-  background-size: 1663px;
+  background-size: 100%;
   top: -100px;
   width: 100%;
   background-repeat: repeat-y;
