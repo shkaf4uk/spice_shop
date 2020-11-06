@@ -100,6 +100,7 @@
 								<li><a href="#">Кофе для джезви</a></li>
 								<li><a href="#">Подарочные наборы</a></li>
 								<li><a href="#">Кофе в дрип-пакетах</a></li>
+
 							</ul>
 						</div><!--mega-menu-->
 					</li><!--children-->
@@ -154,46 +155,30 @@
 					</a>
 				</div>
 			</div>
-			<div class="col-md-5 col-sm-5 col-xs-5 text-right">
+			<div class="col-md-5 col-sm-5 col-xs-5 text-right" >
 				<ul class="info-header">
 					<li><a href="#"><i class="fa fa-volume-control-phone"></i>+38(068)-123-45-67</a></li>
 					<li class="cursive-philosopher" class="search-icon"><a href="#"><i class="fa fa-search"></i>Искать</a></li>
 					<li class="cart">
-						<a class="cursive-philosopher" href="cart.php"><i class="fa fa-shopping-bag"></i>Корзина (0)</a>
-						<div class="cart-modal">
-<?php 
-		  			//Вывод добавленных товаров в модальном окне (при наведении на корзину)
-				$sum = 0;
-		  		if (isset($_COOKIE['basket'])){
-		  			$basket_massiv = json_decode($_COOKIE['basket'], true);
-		  			
-		  			for ($i=0; $i< count($basket_massiv['basket']); $i++){
-		  				$sql = "SELECT * FROM products WHERE id=". $basket_massiv['basket'][$i]['product_id'];
-		  				$result = $conn -> query($sql);
-		  				$product = mysqli_fetch_assoc($result);
-		  				$countBasket = $basket_massiv['basket'][$i]['count'];
-?>
-								<ul>
-									<li>
-										<a href="single-product.html">
-											<img src="<?php echo $product["image"] ?>" alt="cart-produc">
-											<span class="title"><?php echo $product["title"] . " " .  $product["description"] ?></span>
-											<span class="price"><?php echo $product["costs"]*$countBasket ?>грн - <?php echo $countBasket ?>шт.</span>
-										</a>
-									</li>
-								</ul>
 <?php
-		//общая сумма в корзине
- 		$sum = $sum  + $product["costs"]*$countBasket;
+$count = 0;
+if (isset($_COOKIE['basket'])){
+	$basket_massiv = json_decode($_COOKIE['basket'], true);
+	
+	for ($i=0; $i< count($basket_massiv['basket']); $i++){
+		$count = $count + $basket_massiv['basket'][$i]["count"];
 	}
 }
+?>						
+						<a class="cursive-philosopher" href="cart.php" onmouseover="checkCart(this)">
+							<i class="fa fa-shopping-bag"></i>
+							Корзина (<span class="count_basket_header"><?php echo $count ?></span>)
+						</a>
+
+						<div class="cart-modal">
+<?php //СОДЕРЖИМОЕ МОДАЛЬНОГО ОКНА КОРЗИНЫ
+ include $_SERVER['DOCUMENT_ROOT'] .'/modules/modal_basket/cart_modal.php';
 ?>
-								<div class="total">
-									Итого в корзине: <span class="price"><?php if($sum != 0){echo $sum; echo "грн"; } else { echo "пусто"; } ?></span>
-								</div>
-								<div class="button">
-									<a href="cart.php" class="custom-btn pink">Просмотреть корзину</a>
-								</div>
 							</div><!--cart-modal-->
 						</li>
 					</ul><!--info-header-->
