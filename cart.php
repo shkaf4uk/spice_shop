@@ -66,6 +66,7 @@
 			<div class="bottom-table">
 				<a href="shop.php" class="custom-btn">Обратно в магазин</a>
 				<span class="total_price_basket">Итого: <?php if($sum != 0){echo $sum; echo "грн"; } else { echo "пусто"; } ?></span>
+
 			</div><!--bottom-table-->
 		</div>
 		<!--================= End of Cart Inside ====================-->

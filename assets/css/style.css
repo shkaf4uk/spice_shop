@@ -13,6 +13,137 @@
     font-family: 'BrandonBold', serif;
 }
 
+.too-far {
+  top: -685px !important; 
+}
+
+.too-big {
+  top: 25px !important;
+  font-size: 23px !important;
+}
+
+.in-tit-right {
+  color: white;
+  text-align: right;
+  padding-right: 200px;
+  padding-top: 45px;
+  position: relative;
+  font-size: 35px;
+}
+
+img.height-no {
+  height: auto !important;
+  border-radius: 30px;
+  position: relative;
+  width: 550px !important;
+  top: 105px;
+}
+
+.right {
+  float: right;
+}
+
+.lower {
+  top: 90px !important;
+}
+
+.info-title {
+  color: white;
+  padding-left: 250px;
+  padding-top: 45px;
+  position: relative;
+  font-size: 35px;
+}
+
+.info-text {
+  top: 81px;
+  color: white;
+  padding-left: 50px;
+  position: relative;
+  width: 914px;
+  font-size: 31px;
+}
+
+.info-image-left {
+  position: relative;
+  top: 35px;
+  height: 250px;
+  text-align: left;
+  padding-left: 70px;
+}
+
+.info-image-left img{
+  width: 600px;
+  height: 250px;
+  position: relative;
+  top: -200px;
+}
+
+.info-image-right {
+  position: relative;
+  top: -135px;
+  height: 250px;
+  text-align: right;
+  padding-right: 70px;
+}
+
+.info-image-right img{
+  width: 600px;
+  height: 250px;
+}
+
+.info-block {
+  height: 382px;
+  width: 100%;
+  padding: 0 40px;
+  margin-bottom: 25px;
+}
+
+.info-block-xl {
+  height: 645px;
+  width: 100%;
+  padding: 0 40px;
+  margin-bottom: 25px;
+}
+
+.gradient-to-down-yellow {
+  height: 150px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  vertical-align: bottom;
+  background: linear-gradient(to bottom, #0000001f, yellow);
+}
+
+.gradient-to-top {
+  height: 150px;
+  width: 100%;
+  background: linear-gradient(to top, #0000001f, white);
+}
+
+.container-footer {
+  top: 0px !important;
+}
+
+.interest-info {
+  height: 3000px;
+  background: url(bg/bg-product.png);
+  position: relative;
+  background-size: 1663px;
+  top: -100px;
+  width: 100%;
+  background-repeat: repeat-y;
+}
+
+.images-card {
+  padding: 10px 10px 20px !important;
+}
+
+.container-stat {
+  width: 1200px;
+  position: relative;
+}
+
 .container-prod {
   position: relative;
   padding-right: 15px;
@@ -42,7 +173,7 @@
 }
 
 .product .images img {
-  width: 217px;
+  width: 330px;
   height: auto;
 }
 
@@ -392,9 +523,14 @@ input:-moz-placeholder {
   color: #1e1e1e;
   font-family: 'BrandonMedium', serif;
 }
+.wrapper-main {
+  position: relative;
+  height: 4812px;
+}
+
 .wrapper {
   position: relative;
-  height: 1929px;
+  height: 1948px;
 }
 /* 03. Custom Btn
    ==================================== */
@@ -1107,6 +1243,7 @@ body .cart-modal .custom-btn:hover {
 .product {
   position: relative;
   margin-bottom: 80px;
+  top: 60px;
 }
 .product .images {
   background-color: #f3f7f6;
@@ -1463,18 +1600,26 @@ body .cart-modal .custom-btn:hover {
 .breadcrumb {
   display: inline-block;
   padding: 0;
+  position: relative;
   margin: 26px 0 0;
   float: right;
   background-color: transparent;
+  left: 210px;
 }
 .breadcrumb a,
 .breadcrumb li {
-  color: #000;
+  color: #c19d9d;
   font-size: 18px;
   margin-bottom: 0;
   display: inline-block;
-  font-family: 'BrandonRegular', serif;
+  font-family: 'Philosopher', sans-serif;
 }
+
+.breadcrumb a,
+.breadcrumb li:hover {
+  text-decoration: underline;
+}
+
 .breadcrumb .active {
   color: #000;
 }
@@ -1483,8 +1628,10 @@ body .cart-modal .custom-btn:hover {
   color: #000;
 }
 .breadcrumb-top {
-  padding: 90px 0 48px 0;
-  margin-bottom: 130px;
+  padding: 0px 0px 0px 75px;
+  margin-bottom: 70px;
+  position: relative;
+  top: -65px;
 }
 .breadcrumb-top h2 {
   display: inline-block;
@@ -1808,7 +1955,9 @@ body .cart-modal .custom-btn:hover {
 /* 01. Footer
    ==================================== */
 footer {
-  padding: 113px 0 30px 0;
+  position: relative;
+  padding: 30px 0;
+  top: 139px;
 }
 footer .widget-page a {
   font-size: 18px;
@@ -1954,10 +2103,11 @@ footer .widget-title {
   height: 370px;
 }
 .content-shop .product .images img {
-  max-height: 206px;
+  max-height: 370px;
 }
 .content-shop .product .info-product .title {
   margin-bottom: 10px;
+  white-space: nowrap;
 }
 .content-shop .product.list-product {
   width: 100%;
@@ -2097,6 +2247,7 @@ footer .widget-title {
 }
 .pagination li {
   display: inline-block;
+  cursor: pointer;
   margin-right: 1px;
 }
 .pagination li a {
@@ -2114,9 +2265,11 @@ footer .widget-title {
 }
 .pagination li.active a {
   border-radius: 100%;
+
   background-color: #e20b50;
 }
 .pagination li.active:hover a {
+  cursor: pointer;
   background-color: #e20b50;
 }
 .pagination li:hover a {
@@ -2127,6 +2280,10 @@ footer .widget-title {
   pointer-events: none;
 }
 .pagination li:last-child a {
+  border-radius: 100%;
+}
+
+.pagination li:first-child a {
   border-radius: 100%;
 }
 /* 04. Shop Version 2
@@ -2404,12 +2561,12 @@ footer .widget-title {
   font-size: 22px;
   color: #1e1e1e;
   text-transform: uppercase;
-  margin-bottom: 35px;
+  margin-bottom: 15px;
   line-height: normal;
-  font-family: 'BrandonBlack', serif;
+  font-family: 'Philosopher', sans-serif;
 }
 .sidebar-shop > div {
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 /* 02. Widget Search
    ==================================== */
@@ -2417,29 +2574,29 @@ footer .widget-title {
   width: 100%;
   padding: 0 32px 0 15px;
   height: 45px;
-  font-family: 'BrandonRegular', serif;
+  font-family: 'Philosopher', sans-serif;
   border: 1px solid #777;
   background-color: transparent;
 }
 .widget-search input::-webkit-input-placeholder {
   font-size: 18px;
   color: #777;
-  font-family: 'BrandonRegular', serif;
+  font-family: 'Philosopher', sans-serif;
 }
 .widget-search input::-moz-placeholder {
   font-size: 18px;
   color: #777;
-  font-family: 'BrandonRegular', serif;
+  font-family: 'Philosopher', sans-serif;
 }
 .widget-search input:-ms-input-placeholder {
   font-size: 18px;
   color: #777;
-  font-family: 'BrandonRegular', serif;
+  font-family: 'Philosopher', sans-serif;
 }
 .widget-search input:-moz-placeholder {
   font-size: 18px;
   color: #777;
-  font-family: 'BrandonRegular', serif;
+  font-family: 'Philosopher', sans-serif;
 }
 .widget-search input:focus {
   outline: none;
@@ -2461,7 +2618,7 @@ footer .widget-title {
 .widget-category a {
   font-size: 18px;
   color: #1e1e1e;
-  font-family: 'BrandonRegular', serif;
+  font-family: 'Philosopher', sans-serif;
 }
 .widget-category li {
   margin-bottom: 25px;
@@ -2530,16 +2687,18 @@ footer .widget-title {
   color: #1e1e1e;
   line-height: 22px;
   display: block;
-  font-family: 'BrandonMedium', serif;
+  font-family: 'Philosopher', sans-serif;
 }
 .widget-recent-product img {
   margin-right: 14px;
+  width: 68px;
+  height: 100%;
 }
 .widget-recent-product .price {
   font-size: 18px;
   color: #878787;
   line-height: normal;
-  font-family: 'BrandonRegular', serif;
+  font-family: 'Philosopher', sans-serif;
 }
 .widget-recent-product li {
   margin-bottom: 30px;
@@ -2688,7 +2847,7 @@ footer .widget-title {
   color: #878787;
   margin-left: 6px;
   display: inline-block;
-  font-family: 'BrandonRegIt', serif;
+  font-family: 'Philosopher', sans-serif;
 }
 .single-product .inside-single .title {
   font-size: 34px;
@@ -2699,7 +2858,7 @@ footer .widget-title {
 .single-product .inside-single .price {
   font-size: 30px;
   color: #878787;
-  font-family: 'BrandonMedium', serif;
+  font-family: 'Philosopher', sans-serif;
   margin-bottom: 28px;
 }
 .single-product .inside-single .price.out-of-stock {
@@ -3710,7 +3869,7 @@ aside > div {
   background-color: transparent;
 }
 .bg-yellow {
-  background-color: #fff969;
+  background-color: yellow;
 }
 .bg-black {
   background-color: #1e1e1e;
