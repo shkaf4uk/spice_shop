@@ -64,7 +64,7 @@
 				</tbody>
 			</table>
 			<div class="bottom-table">
-				<a href="shop.php" class="custom-btn">Обратно в магазин</a>
+				<a href="shop.php?page=1" class="custom-btn">Обратно в магазин</a>
 				<span class="total_price_basket">Отого: 0грн</span>
 			</div><!--bottom-table-->
 		</div>

@@ -267,20 +267,45 @@ $( document ).on('ready', function(){
 	// **********************************************************************//
 	var quantity = '.quantity';
 
-	$(quantity).on('click', '.minus', function(){
-		var $input = $(this).parent().find('input');
-		var count = parseInt($input.val(),10) - 1;
-		count = count < 1 ? 1 : count;
-		$input.val(count);
-		$input.change();
-		return false;
-	});
-	$(quantity).on('click', '.plus', function(){
-		var $input = $(this).parent().find('input');
-		$input.val(parseInt($input.val(),10) + 1);
-		$input.change();
-		return false;
-	});
+	  $(quantity).on('click', '.minus', function (){
+	    var $input = $(this).parent().find('input');
+	    let price = parseInt($input[0].offsetParent.previousElementSibling.innerText);
+	    let id = $input.context.attributes[1].nodeValue;
+	    var count = parseInt($input.val(),10) - 1;
+
+	    count = count < 1 ? 1 : count;
+
+	    $input.val(count)[0].defaultValue = count ;
+	    let value = $input.val(count)[0].defaultValue;
+	    $input.change();
+
+	    $input[0].offsetParent.nextElementSibling.innerText = price*value + "грн";
+
+	    var ajax = new XMLHttpRequest();
+	      ajax.open("POST", siteURL + "/modules/basket/change_count.php", false );
+	      ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	      ajax.send("value=" + value + "&id=" + id);
+	    return false;
+	  });
+
+	  $(quantity).on('click', '.plus', function(){
+	    var $input = $(this).parent().find('input');
+	    let price = parseInt($input[0].offsetParent.previousElementSibling.innerText);
+	    let id = $input.context.dataset.id;
+
+	    $input.val(parseInt($input.val(),10) + 1);
+	    $input[0].defaultValue = parseInt($input.val(),10);
+	    $input.change();
+
+	    let value = $input[0].defaultValue;
+	    $input[0].offsetParent.nextElementSibling.innerText = price*value + "грн";;
+
+	    var ajax = new XMLHttpRequest();
+	      ajax.open("POST", siteURL + "/modules/basket/change_count.php", false );
+	      ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	      ajax.send("value=" + value + "&id=" + id);
+	    return false;
+	  });
 
 	// **********************************************************************//
 	// ! 11. Grid Product

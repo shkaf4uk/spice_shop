@@ -56,7 +56,7 @@
 				<ul class="menu">
 					<li><a class="cursive-philosopher" href="/">Главная</a></li>
 					<li class="mega-menu-top">
-						<a href="#" class="cursive-philosopher">Товары</a>
+						<a href="shop.php?page=1" class="cursive-philosopher">Товары</a>
 						<div class="cursive-philosopher menu-w-stuff mega-menu columns-4">
 							<ul>
 								<li class="first">Специи</li>
@@ -104,15 +104,15 @@
 						</div><!--mega-menu-->
 					</li><!--children-->
 					<li class="children">
-						<a class="cursive-philosopher" href="about.html">О нас</a>
+						<a class="cursive-philosopher" href="about.php">О нас</a>
 						<ul class="sub-menu">
 							<li><a href="#">Почему именно SpecialSpicy?</a></li>
 							<li><a href="#">Сертификаты качества</a></li>
 							<li><a href="#">Договора продажи</a></li>
 						</ul><!--sub-menu-->
 					</li>
-					<li><a class="cursive-philosopher" href="blog.html">Рецепты</a></li>
-					<li><a class="cursive-philosopher" href="journal-blog.html">Новости</a></li>
+					<li><a class="cursive-philosopher" href="blog.php">Рецепты</a></li>
+					<li><a class="cursive-philosopher" href="journal-blog.php">Новости</a></li>
 					<li class="mega-menu-top">
 						<a class="cursive-philosopher" href="#">Партнеры</a>
 						<div class="menu-w-stuff mega-menu columns-3">
