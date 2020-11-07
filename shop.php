@@ -55,13 +55,15 @@
 						<!--================= End of Widget Category  ====================-->
 						<!--================= Widget Price  ====================-->
 						<div class="widget-price">
-							<h3 class="widget-title">Фильтр цен</h3>
-							<div id="slider-range"></div>
-							<p>
-								<label class="cursive-philosopher" for="amount">Цена:</label>
-								<input type="text" id="amount" readonly>
-							</p>
-							<a href="#" class="cursive-philosopher custom-btn green">Фильтровать</a>
+							<form id="form__filter" method="POST" action="#">
+								<h3 class="widget-title">Фильтр цен</h3>
+								<div id="slider-range"></div>
+								<p>
+									<label class="cursive-philosopher" for="amount">Цена:</label>
+									<input type="text" id="amount" readonly>
+								</p>
+								<button type="submit" class="cursive-philosopher custom-btn green">Фильтровать</button>
+							</form>
 						</div>
 						<!--================= End of Widget Price  ====================-->
 						<!--================= Widget Recent Product  ====================-->

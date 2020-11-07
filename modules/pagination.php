@@ -12,7 +12,6 @@ $result_per_page = 4;
 // Создаём запрос и сразу же выполняем его. Получаем из базы все данные из таблицы продуктов
 if (isset($_GET["cat_id"])){
 	$sql_result = $conn->query( "SELECT * FROM products WHERE category_id=" . $_GET["cat_id"] );
-
 } else {
 	$sql_result = $conn->query( "SELECT * FROM products");
 }
@@ -25,7 +24,6 @@ $this_page_first_result = ($page-1)*$result_per_page;
 // Создаём запрос и сразу же выполняем его. Выбираем всю информацию из таблицы БД с лимитом 0-8
 if (isset($_GET["cat_id"])){
 	$product = $conn->query( "SELECT * FROM products WHERE category_id=" . $_GET["cat_id"] . " LIMIT " . $this_page_first_result . "," . $result_per_page);
-	
 } else {
 	$product = $conn->query( "SELECT * FROM products LIMIT " . $this_page_first_result . "," . $result_per_page);
 }
