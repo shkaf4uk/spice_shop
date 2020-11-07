@@ -5,9 +5,9 @@
 	<!--============== End of Header ========================-->
 	<!--================= Breadcrumb ====================-->
 	<div class="breadcrumb-top bg-yellow">
-		<div class="container">
+		<div class="cursive-philosopher container-stat">
 			<h2>Корзина</h2>
-			<ol class="breadcrumb">
+			<ol class="cursive-philosopher breadcrumb">
 				<li><a href="/">Главная</a></li>
 				<li class="active">Корзина</li>
 			</ol><!--breadcrumb-->

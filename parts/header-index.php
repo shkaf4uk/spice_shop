@@ -123,7 +123,7 @@
 			</div>
 			<div class="col-md-5 col-sm-5 col-xs-5 text-right">
 				<ul class="info-header">
-					<li><a href="#"><i class="fa fa-volume-control-phone"></i>+38(068)-123-45-67</a></li>
+					<li><a href="about.php"><i class="fa fa-volume-control-phone"></i>+38(068)-123-45-67</a></li>
 					<li class="cursive-philosopher" class="search-icon"><a href="#"><i class="fa fa-search"></i>Искать</a></li>
 					<li class="cart">
 						<a class="cursive-philosopher" href="cart.php"><i class="fa fa-shopping-bag"></i>Корзина (0)</a>
