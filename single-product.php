@@ -43,7 +43,7 @@
 				<div class="single-product-slider">
 					<div class="product-slider-shop owl-carousel owl-theme">
 						<!--Изображения будут выглядеть, конечно, оч плохо, но здесь уже не наша вина. Я просто не смог найти нормальное разрешение. (Максим К.)-->
-						<div class="item_single_product"><img src="<?php echo $mass_one_prod["image"]?>" alt="single-product"></div>
+						<div class="item"><img src="<?php echo $mass_one_prod["image"]?>" alt="single-product"></div>
 					</div>
 					<div class="zoom" data-toggle="modal" data-target="#zoom-modal">
 						<img src="assets/images/zoom.png" alt="zoom">

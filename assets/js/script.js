@@ -1,4 +1,4 @@
-var siteURL = "http://tw.local/";
+var siteURL = "http://spice_shop.local/";
 
 // Добавляем товар в корзину
 function addToBasket (btn_add_basket) {

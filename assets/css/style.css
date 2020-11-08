@@ -7,16 +7,6 @@
   font-family: 'Philosopher', sans-serif;
 }
 
-.checkout-form span {
-    font-size: 20px;
-    font-weight: 400;
-    font-family: 'BrandonBold', serif;
-}
-
-.gradient-to-top-yellow {
-height: 150px;
-}
-
 .img-about-card {
   height: 247.06px;
   width: 370px;
@@ -58,7 +48,6 @@ height: 150px;
 
 p.des-title {
   margin: 10px 0px 15px;
-  width: 60%;
 }
 
 .sim-prod-title {
@@ -370,26 +359,26 @@ a.title-prod {
 
 
 /**
-	Navigation Files
+  Navigation Files
 
-	01. Info
-	02. Reset
-	03. Base Style
-	04. Header Style
-	05. Elements Style
-	06. Slider Style
-	07. Footer Style
-	08. Shop Style
-	09. Widget Style
-	10. Single Product Style
-	11. 404 Page Style
-	12. Cart Style
-	13. Blog Style
-	14. Blog Widget Style
-	15. Module Style
-	16. Mobile Menu
-	17. About
-	18. Contact
+  01. Info
+  02. Reset
+  03. Base Style
+  04. Header Style
+  05. Elements Style
+  06. Slider Style
+  07. Footer Style
+  08. Shop Style
+  09. Widget Style
+  10. Single Product Style
+  11. 404 Page Style
+  12. Cart Style
+  13. Blog Style
+  14. Blog Widget Style
+  15. Module Style
+  16. Mobile Menu
+  17. About
+  18. Contact
 
  */
 /*=================================
@@ -542,14 +531,14 @@ iframe {
 =            03. Base Style            =
 ======================================*/
 /**
-	Navigation File
+  Navigation File
 
-	01. Global Style
-	02. Input
-	03. Custom Btn
-	04. Back To Top
-	05. Title Head
-	06. Custom Fonts
+  01. Global Style
+  02. Input
+  03. Custom Btn
+  04. Back To Top
+  05. Title Head
+  06. Custom Fonts
 
  */
 /* 01. Global Style
@@ -782,13 +771,13 @@ input:-moz-placeholder {
 =            04. Header Style            =
 ========================================*/
 /**
-	Navigation File
+  Navigation File
 
-	01. Header
-	02. Top Bar
-	03. Info Header
-	04. Search
-	05. Cart
+  01. Header
+  02. Top Bar
+  03. Info Header
+  04. Search
+  05. Cart
 
  */
 /* 01. Header
@@ -1237,23 +1226,23 @@ body .cart-modal .custom-btn:hover {
 =            05. Elements Less            =
 =========================================*/
 /**
-	Navigation File
+  Navigation File
 
-	01. Social Icon
-	02. Category Product
-	03. Product Slider/Slider Product
-	04. Grid Product
-	05. Big Banner
-	06. Banner Img
-	07. Banner Color
-	08. Schedule
-	09. Posts
-	10. Customers
-	11. Breadcrumb
-	12. Owl Nav
-	13. Countdown
-	14. Filter Grid
-	15. Custom Select
+  01. Social Icon
+  02. Category Product
+  03. Product Slider/Slider Product
+  04. Grid Product
+  05. Big Banner
+  06. Banner Img
+  07. Banner Color
+  08. Schedule
+  09. Posts
+  10. Customers
+  11. Breadcrumb
+  12. Owl Nav
+  13. Countdown
+  14. Filter Grid
+  15. Custom Select
 
  */
 /* 01. Social Icon
@@ -2068,11 +2057,11 @@ body .cart-modal .custom-btn:hover {
 =            07. Footer Style            =
 ========================================*/
 /**
-	Navigation File
+  Navigation File
 
-	01. Footer
-	02. Subscribe
-	03. Copyright
+  01. Footer
+  02. Subscribe
+  03. Copyright
 
  */
 /* 01. Footer
@@ -2185,16 +2174,16 @@ footer .widget-title {
 =            08. Shop Style            =
 ======================================*/
 /**
-	Navigation File
+  Navigation File
 
-	01. Content Shop
-	02. Filter Wrap
-	03. Pagination
-	04. Shop Version 2
-	05. Shop Three Column
-	06. Grid Product
-	07. Six Column
-	08. Full Width
+  01. Content Shop
+  02. Filter Wrap
+  03. Pagination
+  04. Shop Version 2
+  05. Shop Three Column
+  06. Grid Product
+  07. Six Column
+  08. Full Width
 
  */
 /* 01. Content Shop
@@ -2669,13 +2658,13 @@ footer .widget-title {
 =            09. Widget Style            =
 ========================================*/
 /**
-	Navigation File
+  Navigation File
 
-	01. Widget Title
-	02. Widget Search
-	03. Widget Category
-	04. Widget Price
-	05. Widget Recent Product
+  01. Widget Title
+  02. Widget Search
+  03. Widget Category
+  04. Widget Price
+  05. Widget Recent Product
 
  */
 /* 01. Widget Title
@@ -2837,12 +2826,12 @@ footer .widget-title {
 =            10. Single Product Style            =
 =================================================*/
 /**
-	Navigation File
+  Navigation File
 
-	01. Single Product
-	02. Quantity
-	03. Similar Products
-	04. List
+  01. Single Product
+  02. Quantity
+  03. Similar Products
+  04. List
 
  */
 /* 01. Single Product
@@ -3237,10 +3226,10 @@ footer .widget-title {
 =            11. 404 Page Style            =
 ==========================================*/
 /**
-	Navigation File
+  Navigation File
 
-	01. Error Page Top
-	02. Error Page
+  01. Error Page Top
+  02. Error Page
 
  */
 /* 01. Error Page Top
@@ -3278,12 +3267,12 @@ footer .widget-title {
 =            12. Cart Style            =
 ======================================*/
 /**
-	Navigation File
+  Navigation File
 
-	01. Cart Inside
-	02. Checkout
-	03. Checkout Form
-	04. Checkout Modal
+  01. Cart Inside
+  02. Checkout
+  03. Checkout Form
+  04. Checkout Modal
 
  */
 /* 01. Cart Inside
@@ -3571,11 +3560,11 @@ footer .widget-title {
 =            13. Blog Style            =
 ======================================*/
 /**
-	Navigation File
+  Navigation File
 
-	01. Audio Player
-	02. Video Post
-	03. Post
+  01. Audio Player
+  02. Video Post
+  03. Post
 
  */
 /* 01. Audio Player
@@ -3792,14 +3781,14 @@ footer .widget-title {
 =            14. Blog Widget Style            =
 =============================================*/
 /**
-	Navigation File
+  Navigation File
 
-	01. Audio Player
-	02. Datepicker
-	03. Widget Post
-	04. Widget Archive
-	05. Widget Tags
-	06. Widget Instagram
+  01. Audio Player
+  02. Datepicker
+  03. Widget Post
+  04. Widget Archive
+  05. Widget Tags
+  06. Widget Instagram
 
  */
 /* 01. Blog
@@ -3953,11 +3942,11 @@ aside > div {
 =            15. Module Style            =
 ========================================*/
 /**
-	Navigation File
+  Navigation File
 
-	1. Text Color
-	2. Background Color
-	3. Border
+  1. Text Color
+  2. Background Color
+  3. Border
 
  */
 /* 1. Text Color
@@ -4009,7 +3998,7 @@ aside > div {
   border-width: 2px;
 }
 /* 3.1. Border
-	   ==================================== */
+     ==================================== */
 .border-all {
   border: 1px solid;
 }
@@ -4034,7 +4023,7 @@ aside > div {
   border-bottom: 1px solid;
 }
 /* 3.2. Border
-	   ==================================== */
+     ==================================== */
 .border-color-gray {
   border-color: #f3f7f6;
 }
@@ -4049,10 +4038,10 @@ aside > div {
 =            16. Mobile Menu Style            =
 =============================================*/
 /**
-	Navigation File
+  Navigation File
 
-	01. Menu Button
-	02. Mobile Menu
+  01. Menu Button
+  02. Mobile Menu
 
 */
 /* 01. Menu Button
@@ -4335,13 +4324,13 @@ aside > div {
 =            19. Single Blog            =
 =======================================*/
 /**
-	Navigation File
+  Navigation File
 
-	01. Single Blog
-	02. Blockquote
-	03. Table
-	04. Next Post
-	05. Comments
+  01. Single Blog
+  02. Blockquote
+  03. Table
+  04. Next Post
+  05. Comments
 
  */
 /* 01. Single Blog

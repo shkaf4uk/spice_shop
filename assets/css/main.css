@@ -7,16 +7,16 @@ body .cart-modal li img {
 
 /*кнопка удаления продукта из корзины*/
 .btn_delete_product {
-	background: none;
-	border: none;
+  background: none;
+  border: none;
 }
 
 .total_price_basket {
-	font-size: 25px;
+  font-size: 25px;
 }
 
 .order_basket {
-	padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .checkout {
@@ -24,7 +24,7 @@ body .cart-modal li img {
 }
 
 .btn_send_orders {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 
 #full-register {
@@ -122,13 +122,4 @@ body .cart-modal li img {
 
 .profile input {
   width: 20%
-}
-
-.item_single_product {
-  width: 100%;
-  height: 430px;
-}
-
-.title__head__single {
-  margin-top: 40px;
 }
