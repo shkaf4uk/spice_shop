@@ -5,9 +5,9 @@
 	<!--============== End of Header ========================-->
 	<!--================= Breadcrumb ====================-->
 	<div class="breadcrumb-top bg-yellow">
-		<div class="container">
+		<div class="cursive-philosopher container-stat">
 			<h2>Корзина</h2>
-			<ol class="breadcrumb">
+			<ol class="cursive-philosopher breadcrumb">
 				<li><a href="/">Главная</a></li>
 				<li class="active">Корзина</li>
 			</ol><!--breadcrumb-->
@@ -66,7 +66,6 @@
 			<div class="bottom-table">
 				<a href="shop.php" class="custom-btn">Обратно в магазин</a>
 				<span class="total_price_basket">Итого: <?php if($sum != 0){echo $sum; echo "грн"; } else { echo "пусто"; } ?></span>
-
 			</div><!--bottom-table-->
 		</div>
 		<!--================= End of Cart Inside ====================-->

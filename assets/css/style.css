@@ -7,10 +7,107 @@
   font-family: 'Philosopher', sans-serif;
 }
 
+
 .checkout-form span {
     font-size: 20px;
     font-weight: 400;
     font-family: 'BrandonBold', serif;
+}
+
+.gradient-to-top-yellow {
+height: 150px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  top: -130px;
+  vertical-align: bottom;
+  background: linear-gradient(to bottom, white, yellow);
+}
+
+.higher-footer {
+  position: relative;
+  top: -160px;
+}
+
+.footer,
+.one-prod-footer,
+.container-footer-one-prod
+ {
+  height: 340px;
+}
+
+.container-footer-one-prod {
+  top: -30px !important;
+}
+
+.prod-card-same {
+  padding: 10px !important;
+}
+
+.same-prod {
+  top: 140px !important;
+}
+
+p.des-title {
+  margin: 10px 0px 15px;
+}
+
+.sim-prod-title {
+  margin-bottom: 15px !important;
+  top: 20px;
+  position: relative;
+}
+
+.tab-content {
+  margin-bottom: 50px;
+}
+
+ul.nav.nav-tabs.text-center li {
+  margin-right: 10px;
+  padding: 0 5px;
+}
+
+.zoom {
+  display: none;
+}
+
+div.thumbnail.owl-carousel.owl-theme.owl-loaded.owl-drag {
+  display: none;
+}
+
+.star-active {
+  color: gold;
+}
+
+.add-to-cart .quantity {
+  margin-right: 30px;
+}
+
+ul.cat-tag-sha li a {
+  display: inline-block;
+}
+
+.description, 
+.price, 
+.star,
+.add-to-cart,
+ul.cat-tag-sha li
+{
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 35px;
+}
+
+.inside-single {
+  position: relative;
+  top: 50px;
+}
+
+.btn-grp-cart-serch {
+  padding: 58px;
+
 }
 
 .too-far {
@@ -112,13 +209,13 @@ img.height-no {
   position: absolute;
   bottom: 0;
   vertical-align: bottom;
-  background: linear-gradient(to bottom, #0000001f, yellow);
+  background: linear-gradient(to bottom, #00000000, yellow);
 }
 
 .gradient-to-top {
   height: 150px;
   width: 100%;
-  background: linear-gradient(to top, #0000001f, white);
+  background: linear-gradient(to top, #00000000, white);
 }
 
 .container-footer {
@@ -142,6 +239,12 @@ img.height-no {
 .container-stat {
   width: 1200px;
   position: relative;
+}
+
+.checkout-form span {
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'BrandonBold', serif;
 }
 
 .container-prod {
@@ -226,7 +329,7 @@ a.title-prod {
 
 .item img {
   position: relative;
-  top: -200px;
+/*  top: -200px;*/
 }
 
 .category-product ul li a img{
@@ -1499,9 +1602,11 @@ body .cart-modal .custom-btn:hover {
 }
 .nav-tabs li:hover {
   background-color: #fff969;
+  height: 38px;
 }
 .nav-tabs li.active {
   background-color: #fff969;
+  height: 38px;
 }
 .nav-tabs li.active a {
   border: none;
@@ -3096,12 +3201,12 @@ footer .widget-title {
 .list li {
   font-size: 18px;
   color: #1e1e1e;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   font-family: 'BrandonRegular', serif;
 }
 .list li.first {
-  margin-bottom: 34px;
-  font-family: 'BrandonBlack', serif;
+  margin-bottom: 10px;
+  font-family: sans-serif;
 }
 .list li i {
   color: #e20b50;
