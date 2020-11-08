@@ -9,13 +9,14 @@ $col_rand = mysqli_num_rows($res_rand);
 	<ul>
 		<?php
 		for ($i=0; $i < $col_rand; $i++) {
-			$mass_rand = mysqli_fetch_assoc($res_rand); 
-			?>
-			<li>
-				<a href="single-product.html">
-					<img src="<?php echo $mass_rand["image"];?>" alt="recent-product">
-					<span><?php echo $mass_rand["title"];?><span class="price"><?php echo $mass_rand["costs"];?> грн</span></span>
-				</a>
-			</li>
-			<?php
+		$mass_rand = mysqli_fetch_assoc($res_rand); 
+		?>
+		<li>
+			<a href="single-product.php?prod_id=<?php echo $mass_rand["id"]; ?>">
+				<img src="<?php echo $mass_rand["image"];?>" alt="recent-product">
+				<span><?php echo $mass_rand["title"];?><span class="price"><?php echo $mass_rand["costs"];?> грн</span></span>
+			</a>
+		</li>
+		<?php
 		}
+		?>
