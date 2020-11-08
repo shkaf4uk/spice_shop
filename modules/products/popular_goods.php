@@ -9,6 +9,7 @@ $col_rand = mysqli_num_rows($res_rand);
 	<ul>
 		<?php
 		for ($i=0; $i < $col_rand; $i++) {
+
 		$mass_rand = mysqli_fetch_assoc($res_rand); 
 		?>
 		<li>
@@ -19,4 +20,3 @@ $col_rand = mysqli_num_rows($res_rand);
 		</li>
 		<?php
 		}
-		?>

@@ -1,5 +1,6 @@
 <div class="product">
 	<div class="images text-center images-card">
+
 		<a href="single-product.php?prod_id=<?php echo $row["id"]; ?>&cat_id=<?php echo $row["category_id"] ?>">
 			<img class="image-prod-card" src="<?php echo $row["image"] ?>" alt="product5">
 		</a>
