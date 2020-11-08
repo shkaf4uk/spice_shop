@@ -7,12 +7,17 @@
   font-family: 'Philosopher', sans-serif;
 }
 
-.gradient-to-top-yellow {
-height: 150px;
+.img-about-card {
+  height: 247.06px;
+  width: 370px;
+}
+
+.grad-to-top-yellow {
+  height: 125px;
   width: 100%;
-  position: absolute;
+  position: relative;
   bottom: 0;
-  top: -130px;
+  top: 139px;
   vertical-align: bottom;
   background: linear-gradient(to bottom, white, yellow);
 }
@@ -1721,6 +1726,10 @@ body .cart-modal .custom-btn:hover {
 .breadcrumb a,
 .breadcrumb li:hover {
   text-decoration: underline;
+}
+
+.breadcrumb li.active:hover {
+  text-decoration: none;
 }
 
 .breadcrumb .active {
