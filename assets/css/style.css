@@ -14,6 +14,16 @@
 
 .grad-to-top-yellow {
   height: 125px;
+}
+
+.checkout-form span {
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'BrandonBold', serif;
+}
+
+.gradient-to-top-yellow {
+height: 150px;
   width: 100%;
   position: relative;
   bottom: 0;
@@ -111,6 +121,7 @@ ul.cat-tag-sha li
     font-size: 20px;
     font-weight: 400;
     font-family: 'BrandonBold', serif;
+
 }
 
 .too-far {

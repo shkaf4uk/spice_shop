@@ -4,15 +4,67 @@
 			<div class="row">
 				<div class="col-md-6 col-sm-6 col-xs-12 text-left">
 					<ul>
-						<li><a class="cursive-philosopher con-us-header" href="contact.html">Написать нам</a></li>
-						<li><a class="cursive-philosopher" href="contact.html">Поддержка</a></li>
+						<li><a class="cursive-philosopher con-us-header" href="contact.php">Написать нам</a></li>
+						<li><a class="cursive-philosopher" href="contact.php">Поддержка</a></li>
 					</ul><!--right-top-bar-->
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12 text-right">
 					<ul>
-						<li><a class="cursive-philosopher reg-header" href="#">Регистрация</a></li>
-						<li><a class="cursive-philosopher" href="#">Авторизация</a></li>
-					</ul><!--right-top-bar-->
+						<?php
+
+							if (isset($_COOKIE["login"])) {
+								?>
+								<li><a class ="exit_acc" href="profile.php"><img class="user_profile" src="assets/images/user_profile.png"></a></li>
+								<li><a id="exit_window" class="cursive-philosopher" href="exit.php">Выйти</a></li>
+								<?php
+							} else {
+								?>
+								<li><a id="register_window" class="cursive-philosopher reg-header" href="#">Регистрация</a></li> 
+						<li><a id="login_window" class="cursive-philosopher" href="#">Авторизация</a></li>
+						<div id="opacity"></div>
+						<!--Окно с регистрации с формой-->
+  						<div id="full-register">
+  							<img src="/assets/images/close.png">
+  							<form method="POST" action="register.php">
+  							  <div class="form-group">
+							    <label>Введите ваше имя</label>
+							    <input name="name" type="text" class="form-control">
+							  </div>
+							  <div class="form-group">
+							    <label>Введите ваш email</label>
+							    <input name="email" type="text" class="form-control">
+							  </div>
+							  
+							  <div class="form-group">
+							    <label>Введите ваш номер телефона</label>
+							    <input name="phone" type="text" class="form-control">
+							  </div>
+							  <div class="form-group">
+							    <label>Придумайте пароль</label>
+							    <input name="password" type="password" class="form-control">
+							  </div>
+							  <button type="submit" class="btn btn-warning">Зарегистроваться</button>
+							</form>
+  						</div>
+  						<!--Окно с авторизации с формой-->
+  						<div id="full-login">
+  							<img src="/assets/images/close.png">
+  							<form method="POST" action="login.php">
+							  <div class="form-group">
+							    <label>Введите ваш email</label>
+							    <input name="email" type="text" class="form-control">
+							  </div>
+							  <div class="form-group">
+							    <label>Введите Ваш пароль</label>
+							    <input name="password" type="password" class="form-control">
+							  </div>
+							  <button type="submit" class="btn btn-warning">Войти</button>
+							</form>
+  						</div>
+  						<?php
+							}
+						?>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -70,7 +122,7 @@ if (isset($_COOKIE['basket'])){
 						<li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
 						<li class="google"><a href="#"><i class="fa fa-google-plus"></i></a></li>
 						<li class="tumblr"><a href="#"><i class="fa fa-tumblr"></i></a></li>
-						<li class="instagram"><a href="#"><i class="fa fa-instagram"></i></a></li>
+						<li class="instagram"><a href="https://www.instagram.com/special_sp1cy/"><i class="fa fa-instagram"></i></a></li>
 					</ul><!--social-icon-->
 				</div>
 			</div>

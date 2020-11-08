@@ -5,7 +5,7 @@
     include $_SERVER['DOCUMENT_ROOT'] . '/admin/parts/header.php';
 
 	if (isset($_POST["title"]) && isset($_POST["description"]) && isset($_POST["content"]) && isset($_POST["image"]) && isset($_POST["cat_id"]) ) {
-        $image = "../assets/images/products_images/" . $_POST["image"];
+        $image = "assets/images/products_images/" . $_POST["image"];
 
 		$sql = "INSERT INTO products (title, description, content, image, costs, category_id ) VALUES ('" . $_POST["title"] . "','" . $_POST["description"] . "', '" . $_POST["content"] . "' , '" . $image . "' , '" . $_POST["price"] . "' , '" . $_POST["cat_id"] . "')";		
 		

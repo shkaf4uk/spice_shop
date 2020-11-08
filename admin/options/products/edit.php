@@ -6,7 +6,9 @@
 
 	if (isset($_POST["title"]) && isset($_POST["description"]) && isset($_POST["content"]) && isset($_POST["cat_id"]) ) {
 
-		$sql_e = "UPDATE products SET title = '" . $_POST["title"] . "', description = '" . $_POST["description"] . "', content = '" . $_POST["content"] . "' , category_id = '" . $_POST["cat_id"] . "'  WHERE products. `id` = '" . $_GET["id"] . "'";	
+         $image = "assets/images/products_images/" . $_POST["image"];
+
+		$sql_e = "UPDATE products SET title = '" . $_POST["title"] . "', description = '" . $_POST["description"] . "', content = '" . $_POST["content"] . "' , image = '" . $image . "', category_id = '" . $_POST["cat_id"] . "'  WHERE products. `id` = '" . $_GET["id"] . "'";	
 		
 			if ($conn -> query($sql_e)) {
 				echo "<h2>Product edited</h2>";
@@ -23,6 +25,10 @@ if (isset($_GET["id"]) ) {
 	$sql = "SELECT * FROM products WHERE id=" . $_GET["id"];
 	$result = $conn -> query($sql);
     $row = mysqli_fetch_assoc($result);
+
+    $sql_с = "SELECT * FROM categories WHERE id= " . $row["category_id"];
+    $result_с = $conn -> query($sql_с);
+    $category = mysqli_fetch_assoc($result_с);
 
 
 }
@@ -68,17 +74,23 @@ if (isset($_GET["id"]) ) {
                             </div>
                         </div>
                     </div>
+                    <div class="custom-file">
+                        <label>Image</label></br>
+                        <img  style="width: 50px"src="<?php echo "http://spice_shop.local/" . $row["image"] ?>"></br>
+                        </br>
+                        <input name="image" value="<?php echo "http://spice_shop.local/" . $row["image"] ?>" type="file" id="customFile"></br>
+                    </div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Category</label>
                                 <select name = "cat_id" class="form-control">
-                                	<option value = "0">Не выбрано</option>
+                                	<option value = "<?php  echo  $category["id"]  ?>"><?php  echo  $category["title"]  ?></option>
                                 	<?php
-										$sql = "SELECT * FROM categories";
-                                		$result = $conn -> query($sql);
-                                		while ($row = mysqli_fetch_assoc($result)) {
-                                			echo "<option value = '" . $row ["id"] . "' >" . $row ["title"] ."</option>";
+										$sql_сat = "SELECT * FROM categories";
+                                		$result_сat = $conn -> query($sql_сat);
+                                		while ($row_сat = mysqli_fetch_assoc($result_сat)) {
+                                			echo "<option value = '" . $row_сat ["id"] . "' >" . $row_сat ["title"] ."</option>";
 										}
                                     ?>
                                 </select>
