@@ -42,7 +42,7 @@
 ?>
 					<tr>
 						<td class="product-thumbnail"><a href="single-product.html"><img src="<?php echo $product["image"] ?>" alt="cart-product"></a></td>
-						<td class="product-name" data-title="Product"><?php echo $product["title"] . " " .  $product["description"] ?></td>
+						<td class="product-name" data-title="Product"><?php echo $product["title"] ?></td>
 						<td class="product-price text-center" data-title="Price"><span class="price"><?php echo $product["costs"] ?>грн</span></td>
 						<td class="product-quantity text-center" data-title="Quantity">
 							<div class="quantity">

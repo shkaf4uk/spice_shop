@@ -1,12 +1,24 @@
 <?php
 	include $_SERVER['DOCUMENT_ROOT'] .'/parts/header.php';
+
+	// ПАГИНАЦИЯ
+	include $_SERVER['DOCUMENT_ROOT'] .'/modules/pagination.php';
+
+	$product = $conn->query( "SELECT * FROM products WHERE id=" . $_GET["prod_id"] );
+	$row = mysqli_fetch_assoc($product);
 ?>
 	<!--============== End of Header ========================-->
 
-	<?php 
+	<?php
+		//ПРОДУКТ
 		$sql = "SELECT * FROM products WHERE id =" . $_GET["prod_id"];
 		$result_one_prod = $conn->query($sql);
 		$mass_one_prod = mysqli_fetch_assoc($result_one_prod);
+
+		//КАТЕГОРИИ
+		$sql_cat = "SELECT * FROM `categories` WHERE `id` = ". $_GET["cat_id"];
+		$result_cat = $conn->query($sql_cat);
+		$row_cat = mysqli_fetch_assoc($result_cat);
 	?>
 
 	<!--================= Breadcrumb  ====================-->
@@ -31,20 +43,7 @@
 				<div class="single-product-slider">
 					<div class="product-slider-shop owl-carousel owl-theme">
 						<!--Изображения будут выглядеть, конечно, оч плохо, но здесь уже не наша вина. Я просто не смог найти нормальное разрешение. (Максим К.)-->
-						<div class="item"><img src="<?php echo $mass_one_prod["image"]?>" alt="single-product"></div>
-						<div class="item"><img src="http://via.placeholder.com/570x570" alt="single-product"></div>
-						<div class="item"><img src="http://via.placeholder.com/570x570" alt="single-product"></div>
-						<div class="item"><img src="http://via.placeholder.com/570x570" alt="single-product"></div>
-						<div class="item"><img src="http://via.placeholder.com/570x570" alt="single-product"></div>
-						<div class="item"><img src="http://via.placeholder.com/570x570" alt="single-product"></div>
-					</div>
-					<div class="thumbnail owl-carousel owl-theme">
-						<div class="item"><img src="http://via.placeholder.com/133x133" alt="product"></div>
-						<div class="item"><img src="http://via.placeholder.com/133x133" alt="product"></div>
-						<div class="item"><img src="http://via.placeholder.com/133x133" alt="product"></div>
-						<div class="item"><img src="http://via.placeholder.com/133x133" alt="product"></div>
-						<div class="item"><img src="http://via.placeholder.com/133x133" alt="product"></div>
-						<div class="item"><img src="http://via.placeholder.com/133x133" alt="product"></div>
+						<div class="item_single_product"><img src="<?php echo $mass_one_prod["image"]?>" alt="single-product"></div>
 					</div>
 					<div class="zoom" data-toggle="modal" data-target="#zoom-modal">
 						<img src="assets/images/zoom.png" alt="zoom">
@@ -111,46 +110,21 @@
 			<div class="col-md-6">
 				<!--================= Inside Single  ====================-->
 				<div class="inside-single">
-					<div class="cursive-philosopher price"><?php echo $mass_one_prod["costs"]?> грн</div>
-					<div class="star">
-						<span>
-							<i class="fa fa-star star-active"></i>
-							<i class="fa fa-star star-active"></i>
-							<i class="fa fa-star star-active"></i>
-							<i class="fa fa-star star-active"></i>
-							<i class="fa fa-star"></i>
-						</span>
-						<a href="#">(4 отзыва от покупателей)</a>
-					</div><!--star-->
+					<div class="description">
+						<p class="cursive-philosopher price"><?php echo $mass_one_prod["title"]?></p>
+					</div><!--description-->
+					<ul class="cursive-philosopher cat-tag-sha">
+						<li>Категория:
+							<a href="shop.php?page=1&cat_id=<?php echo $_GET["cat_id"]?>"><?php echo $row_cat["title"] ?></a>
+						</li>
+					</ul>
 					<div class="description">
 						<p class="cursive-philosopher"><?php echo $mass_one_prod["description"]?></p>
 					</div><!--description-->
+					<div class="cursive-philosopher price"><?php echo $mass_one_prod["costs"]?> грн</div>
 					<div class="add-to-cart">
-						<div class="quantity">
-							<span class="minus"><img src="assets/images/minus.png" alt="minus"></span>
-							<input value="1" size="5">
-							<span class="plus"><img src="assets/images/plus.png" alt="plus"></span>
-						</div>
-						<a href="cart.php" class="cursive-philosopher custom-btn green">Добавить в корзину</a>
+						<button href="#" class="custom-btn pink" onclick="addToBasket(this)" data-id="<?php echo $row['id'] ?>" >Добавить в корзину</button>
 					</div><!--add-to-cart-->
-					<ul class="cursive-philosopher cat-tag-sha">
-						<li>Категория:
-							<a href="#">Специи</a>
-						</li>
-						<li>Тэги:
-							<a href="#">Специи,</a>
-							<a href="#">Натуральные,</a>
-							<a href="#">Полезно</a>
-						</li>
-						<li>Поделиться:
-							<ul class="social-icon">
-								<li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li class="google"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-								<li class="tumblr"><a href="#"><i class="fa fa-tumblr"></i></a></li>
-								<li class="instagram"><a href="#"><i class="fa fa-instagram"></i></a></li>
-							</ul><!--social-icon-->
-						</li>
-					</ul>
 				</div>
 				<!--================= End of Inside Single  ====================-->
 			</div>
@@ -158,39 +132,15 @@
 				<!--================= Tab  ====================-->
 				<ul class="cursive-philosopher nav nav-tabs text-center">
 					<li class="active"><a href="#description" data-toggle="tab" aria-expanded="true">Описание</a></li>
-					<li><a href="#additional-info" data-toggle="tab">Дополнительная информация</a></li>
-					<li><a href="#shipping" data-toggle="tab">Детали перевозки</a></li>
-					<li><a href="#reviews" data-toggle="tab">Отзывы</a></li>
 				</ul>
 				<div class="tab-content">
 					<div class="tab-pane fade in active" id="description">
-						<p class="des-title cursive-philosopher"><?php echo $mass_one_prod["description"]?></p>
-						<ul class="list">
-							<li class="first">Список полезных свойств:</li>
-							<li><i class="fa fa-circle"></i>Снижает тревожность и избавляет от бессонницы</li>
-							<li><i class="fa fa-circle"></i>Улучшает память</li>
-							<li><i class="fa fa-circle"></i>Улучшает остроту зрения</li>
-							<li><i class="fa fa-circle"></i>Всё это прописано в коде. Если успеем - нужно создать ещё JSON-массив для этого.</li>
-						</ul>
-					</div><!--tab-pane-->
-					<div class="tab-pane fade" id="additional-info">
-						<p class="cursive-philosopher">
-							Здесь хранится дополнительная информация о товаре. Это тоже прописано в коде. Чтобы брать это из БД нужно дополнительное поле, это не сложно, но значит, что в админке понадобится дополнительное поле для ввода данных.
-						</p>
-					</div><!--tab-pane-->
-					<div class="tab-pane fade" id="shipping">
-						<p class="cursive-philosopher">Здесь прописыываются детали к доставке (в какие города, с кем сотрудничают и тд.). Аналогично к предыдущему.</p>
-					</div><!--tab-pane-->
-					<div class="tab-pane fade" id="reviews">
-						<p class="cursive-philosopher">
-							Поле для отзывов от клиентов. Это похоже на предыдущие, но здесь понадобятся массивы JSON, так как будет хранится 1+ отзывов. В принципе, для проверки можно сделать эти поля в админке, но а как полноценный проект - скорее всего понадобится привязка к почте пользователя и его аккаунта.
-						</p>
-					</div><!--tab-pane-->
-				</div>
-				<!--================= End of Tab  ====================-->
-				<h2 class="title-head text-center sim-prod-title cursive-philosopher">Похожие товары:</h2>
-				<!--================= Similar Products  ====================-->
-				<div class="similar-products owl-carousel owl-theme">
+						<p class="des-title cursive-philosopher"><?php echo $mass_one_prod["content"]?></p>
+					</div>
+					<!--================= End of Tab  ====================-->
+					<h2 class="title-head text-center sim-prod-title cursive-philosopher title__head__single">Похожие товары:</h2>
+					<!--================= Similar Products  ====================-->
+					<div class="similar-products owl-carousel owl-theme">
 					
 					<?php
 						// Создаём запрос и сразу же выполняем его. Получаем из базы все данные из таблицы продуктов
@@ -207,7 +157,7 @@
 									</div><!--button-group-->
 								</div><!--images-->
 								<div class="info-product">
-									<a href="single-product.html" class="title"><?php echo $row["title"], " ", $row["description"]?></a>
+									<a href="single-product.html" class="title"><?php echo $row["title"]?></a>
 									<span class="price"><?php echo $row["costs"]?> грн</span>
 								</div><!--info-product-->
 							</div><!--product-->

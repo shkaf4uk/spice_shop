@@ -10,7 +10,7 @@
 		<div class="cursive-philosopher container-stat">
 			<h2>Наш магазин</h2>
 			<ol class="cursive-philosopher breadcrumb">
-				<li><a href="#">Главная</a></li>
+				<li><a href="/">Главная</a></li>
 				<li class="active">Магазин</li>
 			</ol><!--breadcrumb-->
 		</div>
