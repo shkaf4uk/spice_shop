@@ -59,6 +59,12 @@
                   <p>Orders</p>
               </a>
           </li>
+          <li class="nav-item <?php if ($page == "suggestions"){echo 'active' ; } ?>">
+              <a class="nav-link" href="/admin/suggestions.php">
+                  <i class="material-icons">question_answer</i>
+                  <p>Suggestions</p>
+              </a>
+          </li>
           <li class="nav-item">
               <a class="nav-link" href="#">
                   <i class="material-icons">vpn_key</i>

@@ -26,10 +26,10 @@
 						<!--================= Widget Search  ====================-->
 						<div class="widget-search">
 							<h3 class="widget-title">Искать</h3>
-							<form>
+							<form action="#" method="POST" id='form__search__product'>
 								<div class="form-group">
-									<input type="text" placeholder="Что ищем?">
-									<button><i class="fa fa-search"></i></button>
+									<input type="text" placeholder="Что ищем?" name="search_product">
+									<button type="submit"><i class="fa fa-search"></i></button>
 								</div>
 							</form>
 						</div>

@@ -129,3 +129,60 @@ if (formPromoCod != null) {
 		inputTotalPrice.value = formTotalPrice.innerText;
 	}	
 } 
+
+
+//ПОИСК ПРОДУКТОВ в shop.php
+let formSearchProduct = document.querySelector('#form__search__product');
+
+if(formSearchProduct != null) {
+		formSearchProduct.onsubmit = function(search_event){
+	
+		search_event.preventDefault();
+
+		let searchInput = formSearchProduct.querySelector("input[name='search_product']");
+		
+		console.dir(searchInput);
+		let ajax = new XMLHttpRequest();
+			ajax.open("POST", siteURL + "/modules/products/search_product.php", false);
+			ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			ajax.send( "search_product=" + searchInput.value);
+
+		let response = ajax.response;
+
+		let div = document.querySelector('.content-product');
+		div.innerHTML = response;
+	}
+}
+
+
+$("#register_window").click(function() {
+    $("#opacity").css({"display": "block"});
+    $("#full-register")
+        .css({"display": "block"})
+})
+
+$("#login_window").click(function() {
+    $("#opacity").css({"display": "block"});
+    $("#full-login")
+        .css({"display": "block"})
+})
+
+$("#opacity").click(function() {
+    $("#opacity").css({"display": "none"});
+    $("#full-register").css({"display": "none"});
+})
+
+$("#opacity").click(function() {
+    $("#opacity").css({"display": "none"});
+    $("#full-login").css({"display": "none"});
+})
+
+$("#full-register img").click(function() {
+    $("#opacity").css({"display": "none"});
+    $("#full-register").css({"display": "none"});    
+})
+
+$("#full-login img").click(function() {
+    $("#opacity").css({"display": "none"});
+    $("#full-login").css({"display": "none"});  
+})

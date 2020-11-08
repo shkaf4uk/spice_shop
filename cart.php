@@ -30,8 +30,6 @@
 					</tr>
 				</thead>
 				<tbody>
-
-
 <?php
 			//Вывод товаров в корзине
 		  		if (isset($_COOKIE['basket'])){
@@ -147,8 +145,6 @@
 					<div class="col-md-12 text-center"><button type="submit" class="custom-btn btn_send_orders">Оформить заказ</button></div>
 				</form>
 					<!--===================== End of Checkout Form ========================-->
-
-
 			</div>
 		</div>
 	</div>
