@@ -1,13 +1,9 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] .'/configs/db.php';
 
-// Если есть POST запрос, то
 if (isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
 
-	// Если существует переменная кука корзины
 	if (isset($_COOKIE['basket'])){
-
-		// Принимает закодированную в JSON строку и преобразует ее в переменную (массив)
 		$basket_massiv = json_decode($_COOKIE['basket'], true);
 
 		for ($i=0; $i < count($basket_massiv['basket']); $i++){
@@ -18,16 +14,9 @@ if (isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
 		}
 
 		setcookie("basket", "" , 0, "/");
-		
-		// Преобразование массива в JSON формат
 		$jsonProduct = json_encode($basket_massiv);
-
-		//Добавляем куки
 		setcookie("basket", $jsonProduct, time() + 60*360, "/");
-
-		//вывод количества товаров в корзине
 		echo $jsonProduct;
 	}
 }
-
 ?>

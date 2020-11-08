@@ -102,6 +102,12 @@ ul.cat-tag-sha li
   padding: 58px;
 }
 
+.checkout-form span {
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'BrandonBold', serif;
+}
+
 .too-far {
   top: -685px !important; 
 }
@@ -153,17 +159,6 @@ img.height-no {
   font-size: 31px;
 }
 
-.triangle {
-  display: inline-block;
-  position: relative;
-  border-right: 105px solid transparent;
-  border-top: 145px solid #c30;
-  vertical-align: top;
-  left: 109px;
-  overflow: hidden;
-
-}
-
 .info-image-left {
   position: relative;
   top: 35px;
@@ -176,7 +171,7 @@ img.height-no {
   width: 600px;
   height: 250px;
   position: relative;
-  top: -200px;
+  top: 35px;
 }
 
 .info-image-right {
