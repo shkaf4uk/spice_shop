@@ -37,8 +37,8 @@
 			<div class="row">
 				<div class="col-md-6 col-sm-6 col-xs-12 text-left">
 					<ul>
-						<li><a class="cursive-philosopher con-us-header" href="contact.html">Написать нам</a></li>
-						<li><a class="cursive-philosopher" href="contact.html">Поддержка</a></li>
+						<li><a class="cursive-philosopher con-us-header" href="contact.php">Написать нам</a></li>
+						<li><a class="cursive-philosopher" href="contact.php">Поддержка</a></li>
 					</ul><!--right-top-bar-->
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12 text-right">
@@ -110,8 +110,8 @@
 
 					<li><a href="shop.php?page=1" class="cursive-philosopher">Товары</a></li>
 					<li><a class="cursive-philosopher" href="about.php">О нас</a></li>
-					<li><a class="cursive-philosopher" href="blog.php">Рецепты</a></li>
-					<li><a class="cursive-philosopher" href="journal-blog.php">Новости</a></li>
+					<li><a class="cursive-philosopher" href="#">Рецепты</a></li>
+					<li><a class="cursive-philosopher" href="#">Новости</a></li>
 					<li><a class="cursive-philosopher" href="#">Партнеры</a></li>
 				</ul><!--menu-->
 				<button type="button" class="menu-button">

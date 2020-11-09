@@ -77,8 +77,8 @@
 
 					<li><a href="shop.php?page=1" class="cursive-philosopher">Товары</a></li>
 					<li><a class="cursive-philosopher" href="about.php">О нас</a></li>
-					<li><a class="cursive-philosopher" href="blog.php">Рецепты</a></li>
-					<li><a class="cursive-philosopher" href="journal-blog.php">Новости</a></li>
+					<li><a class="cursive-philosopher" href="#">Рецепты</a></li>
+					<li><a class="cursive-philosopher" href="#">Новости</a></li>
 					<li><a class="cursive-philosopher" href="#">Партнеры</a></li>
 				</ul><!--menu-->
 				<button type="button" class="menu-button">

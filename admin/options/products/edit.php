@@ -4,9 +4,23 @@
 
     include $_SERVER['DOCUMENT_ROOT'] . '/admin/parts/header.php';
 
+    if (isset($_GET["id"]) ) {
+        $sql = "SELECT * FROM products WHERE id=" . $_GET["id"];
+        $result = $conn -> query($sql);
+        $row = mysqli_fetch_assoc($result);
+
+        $sql_с = "SELECT * FROM categories WHERE id= " . $row["category_id"];
+        $result_с = $conn -> query($sql_с);
+        $category = mysqli_fetch_assoc($result_с);
+    }
+
 	if (isset($_POST["title"]) && isset($_POST["description"]) && isset($_POST["content"]) && isset($_POST["category_id"]) ) {
 
-         $image = "assets/images/products_images/" . $_POST["image"];
+        if ($_POST["image"] == null){
+            $image = "assets/images/products_images/" . $_POST["image"];
+        } else {
+            $image = "http://spice_shop.local/" . $row["image"];
+        }
 
 		$sql_e = "UPDATE products SET title = '" . $_POST["title"] . "', description = '" . $_POST["description"] . "', content = '" . $_POST["content"] . "' , mass = '" . $_POST["mass"] . "', costs = '" . $_POST["price"] . "', image = '" . $image . "', category_id = '" . $_POST["category_id"] . "'  WHERE products. `id` = '" . $_GET["id"] . "'";	
 		
@@ -21,17 +35,7 @@
 ?>
 
 <?php
-if (isset($_GET["id"]) ) {
-	$sql = "SELECT * FROM products WHERE id=" . $_GET["id"];
-	$result = $conn -> query($sql);
-    $row = mysqli_fetch_assoc($result);
 
-    $sql_с = "SELECT * FROM categories WHERE id= " . $row["category_id"];
-    $result_с = $conn -> query($sql_с);
-    $category = mysqli_fetch_assoc($result_с);
-
-
-}
 ?>
 
 <nav aria-label="breadcrumb">
