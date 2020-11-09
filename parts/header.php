@@ -47,7 +47,7 @@
 
 							if (isset($_COOKIE["login"])) {
 								?>
-								<li><a class ="exit_acc" href="profile.php"><img class="user_profile" src="assets/images/user_profile.png"></a></li>
+								<li><a class ="exit_acc cursive-philosopher header-my-profile" href="profile.php">Мой профиль</a></li>
 								<li><a id="exit_window" class="cursive-philosopher" href="exit.php">Выйти</a></li>
 								<?php
 							} else {
@@ -109,8 +109,8 @@
 					<li><a class="cursive-philosopher" href="/">Главная</a></li>
 					<li><a href="shop.php?page=1" class="cursive-philosopher">Товары</a></li>
 					<li><a class="cursive-philosopher" href="about.php">О нас</a></li>
-					<li><a class="cursive-philosopher" href="blog.php">Рецепты</a></li>
-					<li><a class="cursive-philosopher" href="journal-blog.php">Новости</a></li>
+					<li><a class="cursive-philosopher" href="#">Рецепты</a></li>
+					<li><a class="cursive-philosopher" href="#">Новости</a></li>
 					<li><a class="cursive-philosopher" href="#">Партнеры</a></li>
 				</ul><!--menu-->
 				<button type="button" class="menu-button">

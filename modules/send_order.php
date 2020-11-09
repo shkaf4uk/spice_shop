@@ -34,7 +34,7 @@ if (isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
 			if ( isset($_COOKIE['basket']) ){
 				setcookie("basket", "" , 0, "/");
 			}
-			header("Location: ../shop.php?successful_order=yes");
+			header("Location: ../shop.php?page=1&successful_order=yes");
 		} else {
 			echo "Ошибка";
 		}

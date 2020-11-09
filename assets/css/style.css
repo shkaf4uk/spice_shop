@@ -7,6 +7,17 @@
   font-family: 'Philosopher', sans-serif;
 }
 
+.header-my-profile:after {
+  content: "";
+  width: 1px;
+  height: 15px;
+  position: absolute;
+  cursor: auto;
+  right: 83px;
+  top: 2px;
+  background: rgb(255 255 255);
+}
+
 .img-about-card {
   height: 247.06px;
   width: 370px;
@@ -45,7 +56,7 @@ height: 150px;
 }
 
 .container-footer-one-prod {
-  top: -30px !important;
+  top: -180px !important;
 }
 
 .prod-card-same {
@@ -187,7 +198,7 @@ img.height-no {
   width: 600px;
   height: 250px;
   position: relative;
-  top: 35px;
+  top: -200px;
 }
 
 .info-image-right {
@@ -331,7 +342,7 @@ a.title-prod {
   height: 15px;
   position: absolute;
   cursor: auto;
-  right: 123px;
+  right: 169px;
   top: 2px;
   background: rgb(255 255 255);
 }
@@ -2092,7 +2103,7 @@ footer .widget-page a:last-child {
   margin-bottom: 0;
 }
 footer .widget-contact address {
-  font-family: 'BrandonRegular', serif;
+  font-family: 'Philosopher', sans-serif;
   line-height: 43px;
   margin-top: -12px;
 }
