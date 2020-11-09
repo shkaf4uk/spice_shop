@@ -4,11 +4,11 @@
 
     include $_SERVER['DOCUMENT_ROOT'] . '/admin/parts/header.php';
 
-	if (isset($_POST["title"]) && isset($_POST["description"]) && isset($_POST["content"]) && isset($_POST["cat_id"]) ) {
+	if (isset($_POST["title"]) && isset($_POST["description"]) && isset($_POST["content"]) && isset($_POST["category_id"]) ) {
 
          $image = "assets/images/products_images/" . $_POST["image"];
 
-		$sql_e = "UPDATE products SET title = '" . $_POST["title"] . "', description = '" . $_POST["description"] . "', content = '" . $_POST["content"] . "' , image = '" . $image . "', category_id = '" . $_POST["cat_id"] . "'  WHERE products. `id` = '" . $_GET["id"] . "'";	
+		$sql_e = "UPDATE products SET title = '" . $_POST["title"] . "', description = '" . $_POST["description"] . "', content = '" . $_POST["content"] . "' , mass = '" . $_POST["mass"] . "', costs = '" . $_POST["price"] . "', image = '" . $image . "', category_id = '" . $_POST["category_id"] . "'  WHERE products. `id` = '" . $_GET["id"] . "'";	
 		
 			if ($conn -> query($sql_e)) {
 				echo "<h2>Product edited</h2>";
@@ -70,7 +70,23 @@ if (isset($_GET["id"]) ) {
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Content</label>
-                                <input name = "content" type="text" class="form-control" value ="<?php  echo $row["description"]  ?>">
+                                <input name = "content" type="text" class="form-control" value ="<?php  echo $row["content"]  ?>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Mass</label>
+                                <input name = "mass" type="text" value ="<?php  echo $row["mass"] ?>" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Price</label>
+                                <input name = "price" type="text" class="form-control" value ="<?php  echo $row["costs"]  ?>">
                             </div>
                         </div>
                     </div>
@@ -84,7 +100,7 @@ if (isset($_GET["id"]) ) {
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Category</label>
-                                <select name = "cat_id" class="form-control">
+                                <select name = "category_id" class="form-control">
                                 	<option value = "<?php  echo  $category["id"]  ?>"><?php  echo  $category["title"]  ?></option>
                                 	<?php
 										$sql_сat = "SELECT * FROM categories";

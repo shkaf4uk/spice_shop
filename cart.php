@@ -43,7 +43,7 @@
 					<tr>
 						<td class="product-thumbnail"><a href="single-product.html"><img src="<?php echo $product["image"] ?>" alt="cart-product"></a></td>
 						<td class="product-name" data-title="Product"><?php echo $product["title"] ?></td>
-						<td class="product-price text-center" data-title="Price"><span class="price"><?php echo $product["costs"] ?>грн</span></td>
+						<td class="product-price text-center" data-title="Price"><span class="product-price text-center"><?php echo $product["costs"] ?>грн</span></td>
 						<td class="product-quantity text-center" data-title="Quantity">
 							<div class="quantity">
 								<span class="minus" data-id="<?php echo $product['id'] ?>"><img src="assets/images/minus.png" alt="minus"></span>
@@ -51,7 +51,7 @@
 								<span class="plus" data-id="<?php echo $product['id'] ?>"><img src="assets/images/plus.png" alt="plus"></span>
 							</div><!--quantity-->
 						</td>
-						<td class="product-price text-center" data-title="Total"><span class="price"><?php echo $product["costs"]*$basket_massiv['basket'][$i]['count'] ?>грн</span></td>
+						<td class="product-price text-center" data-title="Total"><span class="product-price text-center"><?php echo $product["costs"]*$basket_massiv['basket'][$i]['count'] ?>грн</span></td>
 						<td class="product-remove text-right"><button onclick="deleteProductBasket(this, <?php echo $product['id'] ?>)" class="btn_delete_product"><img src="assets/images/remove.png" alt="remove"></button></td>
 					</tr>
 <?php

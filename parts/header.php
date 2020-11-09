@@ -153,10 +153,10 @@ if (isset($_COOKIE['basket'])){
 						</li>
 					</ul><!--info-header-->
 					<ul class="social-icon">
-						<li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-						<li class="google"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-						<li class="tumblr"><a href="#"><i class="fa fa-tumblr"></i></a></li>
-						<li class="instagram"><a href="#"><i class="fa fa-instagram"></i></a></li>
+						<li class="facebook"><a href="https://www.facebook.com/profile.php?id=100057148131915"><i class="fa fa-facebook"></i></a></li>
+						<li class="youtube"><a href="https://www.youtube.com/channel/UCpNCu2c2adQ_4aOlxPki3ow/videos"><i class="fa fa-youtube-play"></i></a></li>
+						<li class="twitter"><a href="https://twitter.com/SpecialSpicy"><i class="fa fa-twitter"></i></a></li>
+						<li class="instagram"><a href="https://www.instagram.com/special_sp1cy/"><i class="fa fa-instagram"></i></a></li>
 					</ul><!--social-icon-->
 				</div>
 			</div>

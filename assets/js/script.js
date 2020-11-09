@@ -155,6 +155,7 @@ if(formSearchProduct != null) {
 }
 
 
+//ОКНА РЕГИСТРАЦИИ И АВТОРИЗАЦИИ
 $("#register_window").click(function() {
     $("#opacity").css({"display": "block"});
     $("#full-register")
