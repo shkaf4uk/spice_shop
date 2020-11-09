@@ -5,8 +5,7 @@
 
 	if (isset($_POST["id"]) && isset($_POST["title"])) {
 
-		$sql_e = "UPDATE categories SET id = '" . $_POST["id"] . "', title = '" . $_POST["title"] . "' WHERE categories. `id` = '" . $_GET["id"] . "'";	
-		var_dump($sql_e);
+		$sql_e = "UPDATE categories SET id = '" . $_POST["id"] . "', title = '" . $_POST["title"] . "' WHERE categories. `id` = '" . $_GET["id"] . "'";
 			if ($conn -> query($sql_e)) {
 				echo "<h2>Category edited</h2>";
 			  	header('Location: /admin/categories.php');

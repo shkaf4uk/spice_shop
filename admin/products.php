@@ -29,6 +29,7 @@
                             <th>Description</th>
                             <th>Category</th>
                             <th>Price</th>
+                            <th>Mass</th>
                             <th>Image</th>
                             <th>Options</th>
                         </thead>
@@ -48,6 +49,7 @@
                                             <td><?php echo $row ["description"] ?></td>
                                             <td><?php echo $row_c ["title"] ?></td>
                                             <td><?php echo $row ["costs"] ?></td>
+                                            <td><?php echo $row ["mass"] ?></td>
                                             <td><img  style="width: 50px"src="<?php echo "../" . $row["image"] ?>"></td>
                                             <td>
                                                 <div class="btn-group" role="group" aria-label="Basic example">

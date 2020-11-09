@@ -7,7 +7,7 @@
 	if (isset($_POST["title"]) && isset($_POST["description"]) && isset($_POST["content"]) && isset($_POST["image"]) && isset($_POST["cat_id"]) ) {
         $image = "assets/images/products_images/" . $_POST["image"];
 
-		$sql = "INSERT INTO products (title, description, content, image, costs, category_id ) VALUES ('" . $_POST["title"] . "','" . $_POST["description"] . "', '" . $_POST["content"] . "' , '" . $image . "' , '" . $_POST["price"] . "' , '" . $_POST["cat_id"] . "')";		
+		$sql = "INSERT INTO products (title, description, content, mass, image, costs, cat_id ) VALUES ('" . $_POST["title"] . "','" . $_POST["description"] . "', '" . $_POST["content"] . "' , '" . $_POST["mass"] . "' , '" . $image . "' , '" . $_POST["price"] . "' , '" . $_POST["cat_id"] . "')";		
 		
 
 			if ($conn -> query($sql)) {
@@ -61,8 +61,14 @@
                             </div>
                         </div>
                     </div>
-
-                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Mass</label>
+                                <input name = "mass" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">

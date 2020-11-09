@@ -6,8 +6,6 @@
 
 	if (isset($_POST["id"]) && isset($_POST["title"])) {
         $sql = "INSERT INTO `categories` (`id`, `title`) VALUES ('" . $_POST["id"] . "', '" . $_POST["title"] . "')";
-		var_dump($sql);
-
 			if ($conn -> query($sql)) {
 				echo "<h2>Category added</h2>";
 			  	header('Location: /admin/categories.php');

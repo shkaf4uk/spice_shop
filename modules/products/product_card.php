@@ -14,3 +14,4 @@
     <span class="price"><?php echo $row["costs"] ?> грн</span>
   </div><!--info-product--> 
 </div><!--product-->
+

@@ -61,7 +61,7 @@
 
                                                     $product = mysqli_fetch_assoc($result_p);
 
-                                                    echo $product["title"] . ' - ' . $basket["basket"][$i]["count"] . ' - ' . $basket["basket"][$i]["count"] * $product["costs"] . 'грн;' . '<br>';
+                                                    echo $product["title"] . ' - ' . $basket["basket"][$i]["count"] . 'шт. - ' . $basket["basket"][$i]["count"] * $product["costs"] . 'грн;' . '<br>';
 
                                                 } ?>
                                                 

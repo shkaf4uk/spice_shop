@@ -1,4 +1,4 @@
-var siteURL = "http://tw.local/";
+var siteURL = "http://spice_shop.local/";
 
 // Добавляем товар в корзину
 function addToBasket (btn_add_basket) {
@@ -154,6 +154,7 @@ if(formSearchProduct != null) {
 }
 
 
+//ОКНА РЕГИСТРАЦИИ И АВТОРИЗАЦИИ
 $("#register_window").click(function() {
     $("#opacity").css({"display": "block"});
     $("#full-register")
