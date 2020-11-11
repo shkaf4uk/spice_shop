@@ -7,22 +7,22 @@
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<div class="widget-page">
 						<h4 class="widget-title">Покупатель</h4>
-						<a href="404.html">Регистрация</a>
-						<a href="404.html">Мой аккаунт</a>
+						<a href="#">Регистрация</a>
+						<a href="#">Мой аккаунт</a>
 					</div><!--widget-page-->
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<div class="widget-page">
 						<h4 class="widget-title">FAQ</h4>
-						<a href="404.html">Информация о заказе</a>
-						<a href="404.html">Наши гарантии</a>
+						<a href="cart.php">Информация о заказе</a>
+						<a href="#">Новости</a>
 					</div><!--widget-page-->
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">
 					<div class="widget-page">
 						<h4 class="widget-title">Наша компания</h4>
-						<a href="404.html">About</a>
-						<a href="single-product.html">Наши товары</a>
+						<a href="about.php">О нас</a>
+						<a href="shop.php">Наши товары</a>
 					</div><!--widget-page-->
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12">

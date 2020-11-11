@@ -150,10 +150,10 @@
 						<div class="item">
 							<div class="product same-prod">
 								<div class="images prod-card-same">
-									<a href="single-product.html"><img src="<?php echo $row["image"]?>" alt="product2"></a>
+									<a href="single-product.php?prod_id=<?php echo $row["id"]; ?>&cat_id=<?php echo $row["category_id"]; ?>"><img src="<?php echo $row["image"]?>" alt="product2"></a>
 									<div class="button-group btn-grp-cart-serch">
 										<a href="cart.php" class="custom-btn pink"><i class="fa fa-shopping-bag"></i></a>
-										<a href="single-product.php?prod_id=<?php echo $row["id"]; ?>" class="custom-btn pink"><i class="fa fa-search"></i></a>
+										<a href="single-product.php?prod_id=<?php echo $row["id"]; ?>&cat_id=<?php echo $row["category_id"]; ?>" class="custom-btn pink"><i class="fa fa-search"></i></a>
 									</div><!--button-group-->
 								</div><!--images-->
 								<div class="info-product">
@@ -173,5 +173,5 @@
 	</div>
 	<!--================= End of Single Product  ====================-->
 <?php
-	include $_SERVER['DOCUMENT_ROOT'] .'/parts/custom-footer.php';
+	include $_SERVER['DOCUMENT_ROOT'] .'/parts/footer.php';
 ?>

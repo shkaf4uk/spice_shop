@@ -6,20 +6,19 @@
 
 	if (isset($_POST["title"]) && isset($_POST["description"]) && isset($_POST["content"]) && isset($_POST["category_id"]) ) {
 
-         $image = "assets/images/products_images/" . $_POST["image"];
+        $image = "assets/images/products_images/" . $_POST["image"];
 
 		$sql_e = "UPDATE products SET title = '" . $_POST["title"] . "', description = '" . $_POST["description"] . "', content = '" . $_POST["content"] . "' , mass = '" . $_POST["mass"] . "', costs = '" . $_POST["price"] . "', image = '" . $image . "', category_id = '" . $_POST["category_id"] . "'  WHERE products. `id` = '" . $_GET["id"] . "'";	
 		
+            
 			if ($conn -> query($sql_e)) {
 				echo "<h2>Product edited</h2>";
 			  	header('Location: /admin/products.php');
 			} else {
 				echo "<h2>Error</h2>";
 			}
-
 	} 
 ?>
-
 <?php
 if (isset($_GET["id"]) ) {
 	$sql = "SELECT * FROM products WHERE id=" . $_GET["id"];
@@ -29,8 +28,6 @@ if (isset($_GET["id"]) ) {
     $sql_с = "SELECT * FROM categories WHERE id= " . $row["category_id"];
     $result_с = $conn -> query($sql_с);
     $category = mysqli_fetch_assoc($result_с);
-
-
 }
 ?>
 
@@ -92,9 +89,9 @@ if (isset($_GET["id"]) ) {
                     </div>
                     <div class="custom-file">
                         <label>Image</label></br>
-                        <img  style="width: 50px"src="<?php echo "http://spice_shop.local/" . $row["image"] ?>"></br>
+                        <img  style="width: 50px"src="<?php echo "http://tw.local/" . $row["image"] ?>"></br>
                         </br>
-                        <input name="image" value="<?php echo "http://spice_shop.local/" . $row["image"] ?>" type="file" id="customFile"></br>
+                        <input name="image" value="<?php echo "http://tw.local/" . $row["image"] ?>" type="file" id="customFile"></br>
                     </div>
                     <div class="row">
                         <div class="col-md-12">

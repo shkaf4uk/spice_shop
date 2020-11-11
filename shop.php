@@ -66,8 +66,7 @@
 							</form>
 						</div>
 						<!--================= End of Widget Price  ====================-->
-
-						<!--================= Widget Recent Product  ====================-->
+						<!--================= Widget Recent Product  ====================-->						
 <?php // ПОПУЛЯРНЫЕ ТОВАРЫ
 	include $_SERVER['DOCUMENT_ROOT'] .'/modules/products/popular_goods.php';
 ?>

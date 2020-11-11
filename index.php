@@ -74,10 +74,10 @@
 			$row = mysqli_fetch_assoc($sql);
 			?>
 			   <div class="prod-item product">
-			    	<a href="single-product.php?prod_id=<?php echo $row["id"]; ?>">
+			    	<a href="single-product.php?prod_id=<?php echo $row["id"]; ?>&cat_id=<?php echo $row["category_id"] ?>">
 			    		<img class="images" src="<?php echo $row["image"]?>" alt="slider">
 			    	</a>
-			    	<a href="single-product.php?prod_id=<?php echo $row["id"]; ?>" class="title-prod"><?php echo $row["title"], " ", $row ["description"]?><br><?php echo $row["mass"]?></a>
+			    	<a href="single-product.php?prod_id=<?php echo $row["id"]; ?>&cat_id=<?php echo $row["category_id"] ?>" class="title-prod"><?php echo $row["title"], " ", $row ["description"]?><br><?php echo $row["mass"]?></a>
 			   </div>
 			   <!--item-->
 	<?php
@@ -87,8 +87,6 @@
  </div>
 	
 	<!--=============== End of Product Slider ===================-->
-
-
 	<!--=================== Интересная информация =======================-->
 
 	<div class="interest-info">
@@ -161,7 +159,6 @@
 		<div class="gradient-to-down-yellow"></div>
 	</div>
 	<!--=================== КОНЕЦ Интересная информация =======================-->
-
 </div><!--wrapper-->
 <!--===================== Footer ========================-->
 <?php

@@ -1,4 +1,4 @@
-var siteURL = "http://spice_shop.local/admin/";
+var siteURL = "http://tw.local/admin/";
 
 btnChangeStatus = document.querySelector("#changeProductStatus");
 

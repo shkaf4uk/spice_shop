@@ -6,7 +6,6 @@ function addToBasket (btn_add_basket) {
 		ajax.open("POST", siteURL + "/modules/basket/add_basket.php", false);
 		ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 		ajax.send("id=" + btn_add_basket.dataset.id);
-
 	let countBasketHeader = document.querySelector('.count_basket_header');
 	let number = parseInt(countBasketHeader.innerHTML) + 1;
 	countBasketHeader.innerHTML = number;

@@ -186,46 +186,32 @@ $( document ).on('ready', function(){
 
 
 	let formFilter = document.querySelector("#form__filter");
-if (formFilter != null) {
-		formFilter.onsubmit = function (btn) {
-		btn.preventDefault();
+	
+	if (formFilter != null) {
+			formFilter.onsubmit = function (btn) {
+			btn.preventDefault();
 
-		let input = document.querySelector("#amount");
-		// let	inputFirst = parseInt($( "#amount" ).val(range.slider( "values", 0 ) )[0].value);
-		// let	inputSecond = parseInt($( "#amount" ).val(range.slider( "values", 1 ) )[0].value);
-		let str = input.value;
-		let arr = str.split("-");
-		
-		let inputFirst = parseInt(arr[0]);
-		let inputSecond =  parseInt(arr[1]);
+			let input = document.querySelector("#amount");
+			let str = input.value;
+			let arr = str.split("-");
 
-		// console.dir(input);
-		// console.dir(inputFirst);
-		// console.log(inputSecond);
+			let inputFirst = parseInt(arr[0]);
+			let inputSecond =  parseInt(arr[1]);
 
-		let ajax = new XMLHttpRequest();
-			ajax.open("POST", siteURL + "/modules/products/chose_price.php", false );
-			ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-			ajax.send("inputFirst=" + inputFirst + "&inputSecond=" + inputSecond);
+			let ajax = new XMLHttpRequest();
+				ajax.open("POST", siteURL + "/modules/products/chose_price.php", false );
+				ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+				ajax.send("inputFirst=" + inputFirst + "&inputSecond=" + inputSecond);
 
-		let response = ajax.response;
-		// range.slider({
-		// 	range: true,
-		// 	min: 0,
-		// 	max: 500,
-		// 	values: [ inputFirst, inputSecond ],
-		// 	slide: function( event, ui ) {
-		// 		$( "#amount" ).val( ui.values[ 0 ] + "грн -" + ui.values[ 1 ] +  "грн");
-		// 	}
-		// });
+			let response = ajax.response;
 
-		let div = document.querySelector('.content-product');
-		div.innerHTML = response;
+			let div = document.querySelector('.content-product');
+			div.innerHTML = response;
 
-		$( "#amount" ).val(range.slider( "values", 0 ) + "грн -" + range.slider( "values", 1 ) + "грн" );
+			$( "#amount" ).val(range.slider( "values", 0 ) + "грн -" + range.slider( "values", 1 ) + "грн" );
+		}
+
 	}
-
-}
 
 	// **********************************************************************//
 	// ! 09. Thumbnail Slider
