@@ -14,7 +14,7 @@
 
 							if (isset($_COOKIE["login"])) {
 								?>
-								<li><a class ="exit_acc" href="profile.php"><img class="user_profile" src="assets/images/user_profile.png"></a></li>
+								<li><a href="profile.php" class="cursive-philosopher">Мой профиль</a></li>
 								<li><a id="exit_window" class="cursive-philosopher" href="exit.php">Выйти</a></li>
 								<?php
 							} else {
